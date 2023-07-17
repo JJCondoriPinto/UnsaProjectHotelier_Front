@@ -10,6 +10,10 @@ import { ListRoutesGerenteComponent } from './components/dashboard/gerente/list-
 import { ListRoutesRecepcionistaComponent } from './components/dashboard/recepcionista/list-routes-recepcionista/list-routes-recepcionista.component';
 import { IndexGerenteComponent } from './views/gerente/index-gerente/index-gerente.component';
 import { IndexRecepcionistaComponent } from './views/recepcionista/index-recepcionista/index-recepcionista.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { LoginService } from './services/api/auth/login.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,9 +28,12 @@ import { IndexRecepcionistaComponent } from './views/recepcionista/index-recepci
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

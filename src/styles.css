@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+/* Fonts */
+@font-face {
+  font-family: "Montserrat";
+  src: url('./assets/Fonts/Montserrat/static/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: "Poppins";
+  src: url('./assets/Fonts/Poppins/Poppins-Regular.ttf');
+}
+
+/* Global styles */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}

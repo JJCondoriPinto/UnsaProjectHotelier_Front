@@ -1,1 +1,27 @@
-<p>login-view works!</p>
+<div class="container">
+  <div class="card">
+    <div class="card__header">
+      <h1 class="card__header__title">Bienvenido</h1>
+    </div>
+    <div class="card__body">
+      <form class="card__body__form" (submit)="login()" [formGroup]="formData">
+        <div class="card__body__form__group">
+          <label for="username">Nombre</label>
+          <input type="text" name="username" required formControlName="username">
+        </div>
+        <div class="card__body__form__group">
+          <label for="password">Contraseña</label>
+          <input type="text" name="password" required formControlName="password">
+        </div>
+        <div *ngIf="error && formData.invalid">
+          {{ error }}
+        </div>
+        <div class="card__body__form__submit">
+          <button type="submit">
+            Iniciar sesion
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
