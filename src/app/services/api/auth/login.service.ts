@@ -9,16 +9,11 @@ export class LoginService {
 
   private hostApi: string = 'http://127.0.0.1:8000/'
   private apiUrl : string = `${this.hostApi}api-token-auth/`;
-  private token !: string;
 
   constructor(private httpClient : HttpClient) { }
 
   login(user : User) {
-    this.httpClient.post(`${this.apiUrl}`, user).subscribe(
-      (data : any) => {
-        console.log(data);
-      }
-    );
+    return this.httpClient.post(`${this.apiUrl}`, user)
   }
 
   logout() {

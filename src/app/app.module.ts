@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginService } from './services/api/auth/login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { StorageInfoService } from './services/local/storage-info.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, StorageInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

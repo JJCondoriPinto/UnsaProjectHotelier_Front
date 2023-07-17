@@ -6,6 +6,7 @@ button {
   padding: .5rem 1rem;
   font-size: 1.1rem;
   font-weight: 400;
+  cursor: pointer;
 }
 label {
   font-size: 1rem;
@@ -59,5 +60,9 @@ input:focus {
 .card__body__form__submit button{
   width: 100%;
   background-color: #171717;
+  transition: .1s ease-in-out;
   color: white;
+}
+.card__body__form__submit button:hover{
+  background-color: #000000;
 }
