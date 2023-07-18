@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './services/api/auth/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { StorageInfoService } from './services/local/storage-info.service';
+import { LogoComponent } from './components/icons/logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { StorageInfoService } from './services/local/storage-info.service';
     ListRoutesGerenteComponent,
     ListRoutesRecepcionistaComponent,
     IndexGerenteComponent,
-    IndexRecepcionistaComponent
+    IndexRecepcionistaComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,
