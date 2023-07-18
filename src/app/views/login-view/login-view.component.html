@@ -1,27 +1,39 @@
 <div class="container">
-  <div class="card">
-    <div class="card__header">
-      <h1 class="card__header__title">Bienvenido</h1>
+  <div class="content">
+    <div class="content__info">
+      <div class="content__info__title">
+        <h1>Inicio de sesion</h1>
+      </div>
+      <div class="content__info__text">
+        <p>Proporcione un email y una contraseña, será redireccionado a una vista dependiendo del rol que usted posea</p>
+      </div>
     </div>
-    <div class="card__body">
-      <form class="card__body__form" (submit)="login()" [formGroup]="formData">
-        <div class="card__body__form__group">
-          <label for="email">Email</label>
-          <input type="text" name="email" required formControlName="email">
+    <div class="login">
+      <div class="card">
+        <div class="card__header">
+          <h1 class="card__header__title">Bienvenido</h1>
         </div>
-        <div class="card__body__form__group">
-          <label for="password">Contraseña</label>
-          <input type="text" name="password" required formControlName="password">
+        <div class="card__body">
+          <form class="card__body__form" (submit)="login()" [formGroup]="formData">
+            <div class="card__body__form__group">
+              <label for="email">Email</label>
+              <input type="text" name="email" required formControlName="email">
+            </div>
+            <div class="card__body__form__group">
+              <label for="password">Contraseña</label>
+              <input type="text" name="password" required formControlName="password">
+            </div>
+            <div *ngIf="error && formData.invalid">
+              {{ error }}
+            </div>
+            <div class="card__body__form__submit">
+              <button type="submit">
+                Iniciar sesion
+              </button>
+            </div>
+          </form>
         </div>
-        <div *ngIf="error && formData.invalid">
-          {{ error }}
-        </div>
-        <div class="card__body__form__submit">
-          <button type="submit">
-            Iniciar sesion
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
