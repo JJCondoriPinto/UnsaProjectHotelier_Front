@@ -34,7 +34,7 @@ export class StorageInfoService {
     localStorage.setItem('token', token);
   }
 
-  private getKeyToken() : string {
+  public getKeyToken() : string {
     return localStorage.getItem('token')+"";
   }
 

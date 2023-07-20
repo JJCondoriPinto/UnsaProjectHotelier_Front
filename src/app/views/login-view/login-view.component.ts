@@ -37,7 +37,7 @@ export class LoginViewComponent {
       this.service.login(this.formData.value as User).subscribe({
         next: ((res : any) => {
           this.storage.setInfo(res);
-          this.route.navigate(['/dashboard']);
+          this.route.navigate(['/dashboard/gerente/home']);
         }),
         error: (err : any) => {
           this.error = 'Credenciales incorrectas';
