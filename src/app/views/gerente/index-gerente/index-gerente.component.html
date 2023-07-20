@@ -1,1 +1,13 @@
-<p>index-gerente works!</p>
+<div class="container">
+  <app-sidebar>
+    <app-list-routes-gerente sidebar__body__content></app-list-routes-gerente>
+  </app-sidebar>
+  <div class="content">
+    <div class="content__header">
+      <app-header></app-header>
+    </div>
+    <main class="content__main">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

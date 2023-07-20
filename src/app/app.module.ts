@@ -16,9 +16,16 @@ import { LoginService } from './services/api/auth/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { StorageInfoService } from './services/local/storage-info.service';
 import { LogoComponent } from './components/icons/logo/logo.component';
+import { HomeGerenteComponent } from './views/gerente/home-gerente/home-gerente.component';
+import { LogoDarkComponent } from './components/icons/logo-dark/logo-dark.component';
+import { GerenteHabitacionesViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-view/gerente-habitaciones-view.component';
+import { GerenteRecepcionistasViewComponent } from './views/gerente/recepcionistas/gerente-recepcionistas-view/gerente-recepcionistas-view.component';
+import { GerenteReportesViewComponent } from './views/gerente/reportes/gerente-reportes-view/gerente-reportes-view.component';
+import { HeaderComponent } from './components/dashboard/header/header.component';
 
 @NgModule({
   declarations: [
+    
     AppComponent,
     LoginViewComponent,
     DashBoardViewComponent,
@@ -27,7 +34,13 @@ import { LogoComponent } from './components/icons/logo/logo.component';
     ListRoutesRecepcionistaComponent,
     IndexGerenteComponent,
     IndexRecepcionistaComponent,
-    LogoComponent
+    LogoComponent,
+    HomeGerenteComponent,
+    LogoDarkComponent,
+    GerenteHabitacionesViewComponent,
+    GerenteRecepcionistasViewComponent,
+    GerenteReportesViewComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

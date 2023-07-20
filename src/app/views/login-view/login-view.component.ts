@@ -15,6 +15,9 @@ export class LoginViewComponent {
 
   error !: string
 
+  errorPassword : boolean = false
+  errorEmail: boolean = false
+
   formData : FormGroup = new FormGroup({
     email: new FormControl('',
     [Validators.required]),
@@ -27,6 +30,10 @@ export class LoginViewComponent {
   login() {
     if (!this.formData.invalid) {
 
+      this.error = '';
+      this.errorEmail = false;
+      this.errorPassword= false;
+
       this.service.login(this.formData.value as User).subscribe({
         next: ((res : any) => {
           this.storage.setInfo(res);
@@ -34,6 +41,8 @@ export class LoginViewComponent {
         }),
         error: (err : any) => {
           this.error = 'Credenciales incorrectas';
+          this.errorEmail = true;
+          this.errorPassword= true;
          }
       });
 
@@ -44,7 +53,12 @@ export class LoginViewComponent {
       const err1 = this.formData.get('email')?.errors;
       const err2 = this.formData.get('password')?.errors;
 
-      if (err1?.['required']) {
+      this.errorEmail = err1 ? true : false
+      this.errorPassword = err2 ? true : false
+
+      if (err2?.['required'] && err1?.['required']) {
+        this.error = 'Debe proporcionar unas credenciales';
+      } else if (err1?.['required']) {
         this.error = 'Debe proporcionar un correo';
       } else if (err2?.['required']) {
         this.error = 'Debe proporcionar una contraseña';

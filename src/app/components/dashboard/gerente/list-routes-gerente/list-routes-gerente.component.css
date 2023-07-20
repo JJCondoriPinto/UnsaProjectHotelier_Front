@@ -1,0 +1,27 @@
+* {
+  transition: border .15s ease-in-out;
+  transition: background-color .15s ease-in-out;
+}
+.routes {
+  height: 100%;
+}
+.routes__route {
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  user-select: none;
+  color: var(--app-bg-text);
+}
+.routes__route:hover {
+  background-color: var(--app-sidebar-route-hover);
+}
+.routes__route__text {
+  font-size: 1.2rem;
+}
+
+.active {
+  background-color: var(--app-sidebar-route-hover);
+  border-right: 5px solid var(--app-sidebar-header);
+}

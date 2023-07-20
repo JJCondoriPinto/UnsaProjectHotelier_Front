@@ -1,0 +1,28 @@
+.sidebar {
+  height: 100%;
+  background-color: var(--app-sidebar-background);
+  width: 240px;
+  box-shadow: 2px 0px 27px 0px rgba(68, 68, 68, 0.528);
+  border: none;
+
+  transition: width .2s ease-in-out;
+}
+.sidebar__header {
+  text-align: center;
+  background-color: var(--app-sidebar-header);
+}
+.hidden {
+  width: 0;
+  & * {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .sidebar {
+    width: 0;
+    & * {
+      display: none;
+    }
+  }
+}

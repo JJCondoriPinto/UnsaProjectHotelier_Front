@@ -1,3 +1,6 @@
+@import url(normalize.css);
+@import url(variables.css);
+
 /* Fonts */
 @font-face {
   font-family: "Montserrat";
@@ -11,7 +14,10 @@
 /* Global styles */
 *, *::after, *::before {
   box-sizing: border-box;
+  transition: all .02s ease-in-out;
 }
-body {
+body, html {
   margin: 0;
+  height: 100%;
 }
+

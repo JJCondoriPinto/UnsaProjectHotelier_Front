@@ -1,1 +1,11 @@
-<p>sidebar works!</p>
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar__header">
+    <div class="sidebar__header__logo">
+      <app-logo></app-logo>
+    </div>
+  </div>
+  <div class="sidebar__body">
+    <ng-content select="[sidebar__body__content]">
+    </ng-content>
+  </div>
+</aside>

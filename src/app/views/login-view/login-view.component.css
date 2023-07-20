@@ -100,3 +100,15 @@ input:focus {
 .card__body__form__submit button:hover{
   background-color: #000000;
 }
+.card__error {
+  text-align: center;
+  color: rgb(157, 16, 16);
+}
+.labelError {
+  & label {
+    color: rgb(199, 15, 15);
+  }
+  & input {
+    border-bottom-color: rgba(255, 13, 13, 0.655) !important;
+  }
+}

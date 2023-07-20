@@ -15,16 +15,18 @@
         </div>
         <div class="card__body">
           <form class="card__body__form" (submit)="login()" [formGroup]="formData">
-            <div class="card__body__form__group">
+            <div class="card__body__form__group" [ngClass]="{'labelError' : errorEmail && formData.invalid}">
               <label for="email">Email</label>
               <input type="text" name="email" required formControlName="email">
             </div>
-            <div class="card__body__form__group">
+            <div class="card__body__form__group" [ngClass]="{'labelError' : errorPassword && formData.invalid}">
               <label for="password">Contraseña</label>
               <input type="text" name="password" required formControlName="password">
             </div>
             <div *ngIf="error && formData.invalid">
-              {{ error }}
+              <div class="card__error">
+                {{ error }}
+              </div>
             </div>
             <div class="card__body__form__submit">
               <button type="submit">

@@ -1,0 +1,56 @@
+svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.header {
+  background-color: var(--app-header);
+  color: var(--app-bg-text-primary);
+}
+.header__head {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.header__head__title {
+  font-size: 1.8rem;
+}
+.header__route {
+  padding: 1rem 1rem;
+  background-color: var(--app-sidebar-header);
+  display: flex;
+  user-select: none;
+}
+.separator-path {
+  margin-inline: .5rem;
+}
+
+.mode-switch, .aside-menu{
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  padding: 0;
+  color: var(--app-content-switch);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.mode-switch .moon {
+  fill: none;
+}
+
+.mode-switch.active .moon {
+  fill: var(--app-content-switch);
+}
+
+.header__head__actions {
+  display: flex;
+}
+
+.header__head__actions__switch,
+.header__head__actions__aside {
+  height: 100%;
+}
+

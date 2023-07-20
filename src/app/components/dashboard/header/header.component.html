@@ -1,0 +1,51 @@
+<header class="header">
+  <div class="header__head">
+    <div class="header__head__title">
+      Bienvenido(a)
+      <!-- Nombre de usuario logeado -->
+    </div>
+    <div class="header__head__actions">
+      <div class="header__head__actions__switch">
+        <div class="mode-switch" (click)="changeTheme()" title="Switch Theme">
+          <svg
+            class="moon"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            width="24"
+            height="24"
+            viewbox="0 0 24 24"
+          >
+            <defs></defs>
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="header__head__actions__aside">
+        <div class="aside-menu" (click)="collapseSide()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__route">
+    <div class="header__route__path" *ngFor="let path of routes">
+      <span class="separator-path"> > </span>
+      <span>{{ path }}</span>
+    </div>
+  </div>
+</header>

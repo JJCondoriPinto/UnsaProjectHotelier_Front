@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-routes-gerente',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class ListRoutesGerenteComponent {
 
+  constructor (private route : Router) { }
+
+  currentRoute(route : string) {
+    return this.route.url.split('/').pop() == route;
+  }
 }
