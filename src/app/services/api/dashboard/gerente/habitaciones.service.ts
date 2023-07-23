@@ -13,8 +13,16 @@ export class HabitacionesService extends ApiService{
     return this.httpClient.get<Habitacion[]>(this.apiUrl, { headers: this.HEADER });
   }
 
+  show(id : number) : any {
+    return this.httpClient.get<Habitacion>(`${this.apiUrl}${id}`, { headers: this.HEADER });
+  }
+
   delete(id: number) : any {
     return this.httpClient.delete(`${this.apiUrl}${id}`, { headers: this.HEADER });
+  }
+
+  update(id : number, habitacion : any) : any {
+    return this.httpClient.put(`${this.apiUrl}${id}`, habitacion, { headers: this.HEADER });
   }
 
   create(habitacion : any) : any {

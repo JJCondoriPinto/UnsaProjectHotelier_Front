@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <form class="view-form" [formGroup]="formData" (submit)="submit()" enctype="multipart/form-data">
+  <form class="view-form" [formGroup]="formData" *ngIf="ready" (submit)="submit()" enctype="multipart/form-data">
     <div class="form">
       <div class="form__header">
         <h2>Datos generales</h2>
@@ -45,12 +45,15 @@
             {{errors?.tamanio}}
           </div>
         </div>
-        <div class="form__body__group form__body__group--img">
+        <div class="form__body__group">
           <input type="file" name="imagen" class="form__control form__control--img"  (change)="[onFileSelected($event), clearError('imagen')]"
           [class]="{'error' : errors.imagen !== ''}">
           <div [hidden]="errors.imagen === ''" class="error__label">
             {{errors?.imagen}}
           </div>
+        </div>
+        <div class="form__body__group form__body__group--img" *ngIf="imagen != null">
+          <img src="{{urlImg}}{{imagen}}" alt="">
         </div>
       </div>
     </div>
@@ -79,8 +82,8 @@
           </div>
         </div>
         <div class="form__submit">
-          <button type="submit" class="form__submit__button form__submit__button--create" [disabled]="formData.invalid" [class]="{'disabled' : formData.invalid}">Crear habitacion</button>
-          <button routerLink=".." (click)="$event.preventDefault()"  class="form__submit__button form__submit__button--cancel">Cancelar</button>
+          <button type="submit" class="form__submit__button form__submit__button--create" [disabled]="formData.invalid" [class]="{'disabled' : formData.invalid}">Actualizar habitacion</button>
+          <button routerLink=".." (click)="$event.preventDefault()" class="form__submit__button form__submit__button--cancel">Cancelar</button>
         </div>
       </div>
     </div>

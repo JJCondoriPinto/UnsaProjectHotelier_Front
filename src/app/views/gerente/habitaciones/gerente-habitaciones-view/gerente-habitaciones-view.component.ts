@@ -24,14 +24,16 @@ export class GerenteHabitacionesViewComponent implements OnInit {
 
   }
 
-  deleteHabitacion(id : number): void {
+  deleteHabitacion(id : number, event : Event): void {
+    event.preventDefault()
+    event.stopPropagation()
     this.service.delete(id).subscribe((data : any) => {
       this.habitaciones = this.habitaciones.filter((habitacion : Habitacion) => habitacion.id !== id);
     })
   }
 
   showHabitacion(id : number) : void {
-    this.router.navigate([id.toString()]);
+    this.router.navigate([`${this.router.url}/${id.toString()}`]);
   }
 
 }

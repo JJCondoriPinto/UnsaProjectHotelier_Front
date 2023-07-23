@@ -10,6 +10,7 @@ import { GerenteRecepcionistasViewComponent } from './views/gerente/recepcionist
 import { GerenteReportesViewComponent } from './views/gerente/reportes/gerente-reportes-view/gerente-reportes-view.component';
 import { GerenteHabitacionesCreateViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-create-view/gerente-habitaciones-create-view.component';
 import { GerenteHabitacionesViewRouterComponent } from './views/gerente/habitaciones/gerente-habitaciones-view-router/gerente-habitaciones-view-router.component';
+import { GerenteHabitacionesShowViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-show-view/gerente-habitaciones-show-view.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,10 @@ const routes: Routes = [
               {
                 path: 'create',
                 component: GerenteHabitacionesCreateViewComponent
+              },
+              {
+                path: ':id',
+                component: GerenteHabitacionesShowViewComponent
               }
             ]
           },

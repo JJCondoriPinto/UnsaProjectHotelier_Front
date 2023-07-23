@@ -25,6 +25,7 @@ import { HeaderComponent } from './components/dashboard/header/header.component'
 import { ActionsHeaderTableComponent } from './components/dashboard/gerente/actions-header-table/actions-header-table.component';
 import { GerenteHabitacionesCreateViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-create-view/gerente-habitaciones-create-view.component';
 import { GerenteHabitacionesViewRouterComponent } from './views/gerente/habitaciones/gerente-habitaciones-view-router/gerente-habitaciones-view-router.component';
+import { GerenteHabitacionesShowViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-show-view/gerente-habitaciones-show-view.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { GerenteHabitacionesViewRouterComponent } from './views/gerente/habitaci
     ActionsHeaderTableComponent,
     GerenteHabitacionesCreateViewComponent,
     GerenteHabitacionesViewRouterComponent,
+    GerenteHabitacionesShowViewComponent,
   ],
   imports: [
     BrowserModule,
