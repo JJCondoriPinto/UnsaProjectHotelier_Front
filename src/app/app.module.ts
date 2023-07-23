@@ -29,6 +29,12 @@ import { GerenteHabitacionesShowViewComponent } from './views/gerente/habitacion
 import { GerenteRecepcionistasViewRouterComponent } from './views/gerente/recepcionistas/gerente-recepcionistas-view-router/gerente-recepcionistas-view-router.component';
 import { GerenteRecepcionistasCreateViewComponent } from './views/gerente/recepcionistas/gerente-recepcionistas-create-view/gerente-recepcionistas-create-view.component';
 import { GerenteRecepcionistasShowViewComponent } from './views/gerente/recepcionistas/gerente-recepcionistas-show-view/gerente-recepcionistas-show-view.component';
+import { HomeRecepcionistaComponent } from './views/recepcionista/home-recepcionista/home-recepcionista.component';
+import { RecepcionistaHabitacionesViewComponent } from './views/recepcionista/habitaciones/recepcionista-habitaciones-view/recepcionista-habitaciones-view.component';
+import { RecepcionistaHuespedesViewComponent } from './views/recepcionista/huespedes/recepcionista-huespedes-view/recepcionista-huespedes-view.component';
+import { RecepcionistaReservasViewComponent } from './views/recepcionista/reservas/recepcionista-reservas-view/recepcionista-reservas-view.component';
+import { RecepcionistaCheckinsViewComponent } from './views/recepcionista/checkins/recepcionista-checkins-view/recepcionista-checkins-view.component';
+import { RecepcionistaCheckoutsViewComponent } from './views/recepcionista/checkouts/recepcionista-checkouts-view/recepcionista-checkouts-view.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +60,12 @@ import { GerenteRecepcionistasShowViewComponent } from './views/gerente/recepcio
     GerenteRecepcionistasViewRouterComponent,
     GerenteRecepcionistasCreateViewComponent,
     GerenteRecepcionistasShowViewComponent,
+    HomeRecepcionistaComponent,
+    RecepcionistaHabitacionesViewComponent,
+    RecepcionistaHuespedesViewComponent,
+    RecepcionistaReservasViewComponent,
+    RecepcionistaCheckinsViewComponent,
+    RecepcionistaCheckoutsViewComponent,
   ],
   imports: [
     BrowserModule,

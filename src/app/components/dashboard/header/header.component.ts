@@ -15,12 +15,23 @@ export class HeaderComponent implements OnInit {
   private lastRoute !: string
   private titles : any = {
     home : "Bienvenido(a)",
+
     recepcionistas : "Recepcionistas",
     recepcionistascreate: "Registro de recepcionista",
     recepcionistasshow: "Recepcionista ID ",
+
     habitaciones : "Habitaciones",
     habitacionescreate: "Creación de habitacion",
     habitacionesshow: "Habitacion Nro ",
+
+    huespedes : "Huespedes registrados",
+
+    reservas : "Reservas actuales",
+
+    checkins : "Check ins (entradas)",
+
+    checkouts : "Check outs (salidas)",
+
     reportes : "Reportes",
   }
 

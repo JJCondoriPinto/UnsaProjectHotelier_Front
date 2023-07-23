@@ -1,1 +1,13 @@
-<p>index-recepcionista works!</p>
+<div class="container">
+  <app-sidebar>
+    <app-list-routes-recepcionista sidebar__body__content></app-list-routes-recepcionista>
+  </app-sidebar>
+  <div class="content">
+    <div class="content__header">
+      <app-header></app-header>
+    </div>
+    <main class="content__main">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
