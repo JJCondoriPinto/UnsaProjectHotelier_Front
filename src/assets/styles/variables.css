@@ -1,0 +1,64 @@
+:root {
+  --app-bg-content: #dfdfdf90;
+  --app-bg-form: #f8f8f8f1;
+
+  --app-content-switch: #ffffff;
+  --app-bg-primary: #ece9e9f3;
+  --app-bg-text: #121111d1;
+  --app-bg-text-primary: #ffffff;
+
+  --app-bg-input: #dfdfdf90;
+  --app-bg-input-hover: #cbcbcbb2;
+
+  --app-sidebar-background: #e9e8e8c9;
+  --app-sidebar-header: #232222;
+  --app-sidebar-route-hover: #d1cfcfc9;
+
+  --app-header: #242323ef;
+  --app-header-table: #c1bfbf8d;
+
+  --app-button-green: #13752abd;
+  --app-button-green-hover: #097623d0;
+
+  --app-button-red: rgba(184, 46, 46, 0.779);
+  --app-button-red-hover: rgba(195, 23, 23, 0.858);
+
+  --app-button-blue: #2869ff97;
+  --app-button-blue-hover: #6290fdbe;
+
+  --app-button-dark: #101010e0;
+  --app-button-dark-hover: #292626d3;
+
+  --app-button-search-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231f1c2e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+
+
+  --action-color: #272626c4;
+  --action-color-hover: #3f3f3fd7;
+}
+.dark:root {
+  --app-bg-content: #141111ef;
+  --app-bg-content-text: #141111ef;
+  --app-bg-form: #2f2e2ec3;
+
+  --app-bg-primary: #121111d1;
+  --app-bg-text: #ece9e9f3;
+
+  --app-bg-input: #3a3939c3;
+  --app-bg-input-hover: #212121d7;
+
+  --app-sidebar-background: #0a0a0adc;
+  --app-sidebar-header: #050404;
+  --app-sidebar-route-hover: #3e3d3dc9;
+
+  --app-header: #151515ef;
+  --app-header-table: #6a69698d;
+
+  --app-button-search-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+
+
+  --action-color: rgba(187, 186, 186, 0.769);
+  --action-color-hover: #3f3f3fd7;
+
+  --app-button-dark: #363636c4;
+  --app-button-dark-hover: #1e1e1ed1;
+}

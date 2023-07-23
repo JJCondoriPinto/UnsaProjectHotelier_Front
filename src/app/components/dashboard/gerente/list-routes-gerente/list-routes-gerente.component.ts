@@ -11,6 +11,6 @@ export class ListRoutesGerenteComponent {
   constructor (private route : Router) { }
 
   currentRoute(route : string) {
-    return this.route.url.split('/').pop() == route;
+    return this.route.url.split('/')[3] == route;
   }
 }

@@ -8,7 +8,17 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  private titles : any = {
+    home : "Bienvenido(a)",
+    habitaciones : "Habitaciones",
+    recepcionistas : "Recepcionistas",
+    reportes : "Reportes",
+    habitacionescreate: "Creación de habitacion"
+  }
+
+  private lastRoute !: String
   routes !: string[];
+  title !: string;
 
   constructor (private router : Router) {
     this.router.events.subscribe((event) => {
@@ -20,6 +30,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.routes = this.router.url.split('/').slice(1);
+    this.lastRoute = this.routes[this.routes.length-1];
+    if(this.lastRoute == 'create') {
+      this.lastRoute = this.routes[this.routes.length-2] + this.lastRoute;
+    }
+    this.title = this.titles[this.lastRoute.toString()];
   }
 
   changeTheme() {

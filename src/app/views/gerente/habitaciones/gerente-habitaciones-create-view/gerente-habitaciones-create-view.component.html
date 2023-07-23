@@ -1,0 +1,88 @@
+<div class="wrapper">
+  <form class="view-form" [formGroup]="formData" (submit)="submit()" enctype="multipart/form-data">
+    <div class="form">
+      <div class="form__header">
+        <h2>Datos generales</h2>
+      </div>
+      <div class="form__body">
+        <div class="form__body__group">
+          <input type="number" step="1" class="form__control" name="nro_habitacion" placeholder="Nro de habitacion" formControlName="nro_habitacion"
+          (change)="clearError('nro_habitacion')"
+          [class]="{'error' : errors.nro_habitacion !== ''}">
+          <div [hidden]="errors.nro_habitacion === ''" class="error__label">
+            {{errors?.nro_habitacion}}
+          </div>
+        </div>
+        <div class="form__body__group">
+          <input type="number" step="1" class="form__control" name="nro_piso" placeholder="Nro de piso (primer caracter de Nro de habitación)"
+          formControlName="nro_piso"
+          [class]="{'error' : errors.nro_piso !== ''}">
+          <div [hidden]="errors.nro_piso === ''" class="error__label">
+            {{errors?.nro_piso}}
+          </div>
+        </div>
+        <div class="form__body__group">
+          <input type="text" class="form__control" name="tipo_habitacion" placeholder="Tipo de habitacion" formControlName="tipo_habitacion"
+          (change)="clearError('tipo_habitacion')"
+          [class]="{'error' : errors.tipo_habitacion !== ''}">
+          <div [hidden]="errors.tipo_habitacion === ''" class="error__label">
+            {{errors?.tipo_habitacion}}
+          </div>
+        </div>
+        <div class="form__body__group">
+          <input type="number" step="0.01" class="form__control" name="precio" placeholder="Precio de reserva" formControlName="precio"
+          (change)="clearError('precio')"
+          [class]="{'error' : errors.precio !== ''}">
+          <div [hidden]="errors.precio === ''" class="error__label">
+            {{errors?.precio}}
+          </div>
+        </div>
+        <div class="form__body__group">
+          <input type="number" step="0.01" class="form__control" name="tamanio" placeholder="Tamaño de habitacion (m2)" formControlName="tamanio"
+          (change)="clearError('tamanio')"
+          [class]="{'error' : errors.tamanio !== ''}">
+          <div [hidden]="errors.tamanio === ''" class="error__label">
+            {{errors?.tamanio}}
+          </div>
+        </div>
+        <div class="form__body__group form__body__group--img">
+          <input type="file" name="imagen" class="form__control form__control--img"  (change)="[onFileSelected($event), clearError('imagen')]"
+          [class]="{'error' : errors.imagen !== ''}">
+          <div [hidden]="errors.imagen === ''" class="error__label">
+            {{errors?.imagen}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form">
+      <div class="form__header">
+        <h2>Contenido</h2>
+      </div>
+      <div class="form__body">
+        <div class="form__body__content" *ngFor="let contenido of contenido">
+          <input type="text" name="nombre" placeholder="Nombre"
+            required
+            class="form__content__name form__control" [(ngModel)]="contenido.nombre" [ngModelOptions]="{standalone: true}">
+          <input type="number" name="cantidad" placeholder="#" min="0"
+            required
+            class="form__content__stock form__control" [(ngModel)]="contenido.cantidad" [ngModelOptions]="{standalone: true}">
+          <div class="form__body__content__description">
+            <textarea name="descripcion" class="form__control" rows="5" placeholder="Descripcion" required [(ngModel)]="contenido.descripcion" [ngModelOptions]="{standalone: true}"></textarea>
+          </div>
+        </div>
+        <div class="form__body__actions">
+          <div class="form__add" (click)="addContenido()">
+            +
+          </div>
+          <div class="form__min" (click)="minContenido()">
+            -
+          </div>
+        </div>
+        <div class="form__submit">
+          <button type="submit" class="form__submit__button form__submit__button--create" [disabled]="formData.invalid" [class]="{'disabled' : formData.invalid}">Crear habitacion</button>
+          <button routerLink=".." class="form__submit__button form__submit__button--cancel">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

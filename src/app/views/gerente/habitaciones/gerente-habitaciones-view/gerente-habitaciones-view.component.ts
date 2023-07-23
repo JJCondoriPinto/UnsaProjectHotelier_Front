@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Habitacion } from 'src/app/interfaces/Habitacion';
 import { HabitacionesService } from 'src/app/services/api/dashboard/gerente/habitaciones.service';
 
 @Component({
@@ -8,10 +10,28 @@ import { HabitacionesService } from 'src/app/services/api/dashboard/gerente/habi
 })
 export class GerenteHabitacionesViewComponent implements OnInit {
 
-  constructor (private service : HabitacionesService) {}
+  habitaciones !: Habitacion[];
+  urlImg !: string;
+
+  constructor (private service : HabitacionesService, private router : Router) {}
 
   ngOnInit(): void {
-      this.service.index();
+
+    this.service.index().subscribe((data : Habitacion[]) => {
+      this.urlImg = `${this.service.HOST_API}`
+      this.habitaciones = data;
+    })
+
+  }
+
+  deleteHabitacion(id : number): void {
+    this.service.delete(id).subscribe((data : any) => {
+      this.habitaciones = this.habitaciones.filter((habitacion : Habitacion) => habitacion.id !== id);
+    })
+  }
+
+  showHabitacion(id : number) : void {
+    this.router.navigate([id.toString()]);
   }
 
 }

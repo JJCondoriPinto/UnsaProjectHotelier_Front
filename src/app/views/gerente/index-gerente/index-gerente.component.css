@@ -10,4 +10,5 @@
 }
 .content__main {
   color: var(--app-bg-text);
+  padding: 1rem;
 }

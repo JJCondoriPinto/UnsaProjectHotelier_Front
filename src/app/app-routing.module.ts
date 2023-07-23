@@ -8,6 +8,8 @@ import { HomeGerenteComponent } from './views/gerente/home-gerente/home-gerente.
 import { GerenteHabitacionesViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-view/gerente-habitaciones-view.component';
 import { GerenteRecepcionistasViewComponent } from './views/gerente/recepcionistas/gerente-recepcionistas-view/gerente-recepcionistas-view.component';
 import { GerenteReportesViewComponent } from './views/gerente/reportes/gerente-reportes-view/gerente-reportes-view.component';
+import { GerenteHabitacionesCreateViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-create-view/gerente-habitaciones-create-view.component';
+import { GerenteHabitacionesViewRouterComponent } from './views/gerente/habitaciones/gerente-habitaciones-view-router/gerente-habitaciones-view-router.component';
 
 const routes: Routes = [
   {
@@ -38,7 +40,17 @@ const routes: Routes = [
           },
           {
             path: 'habitaciones',
-            component: GerenteHabitacionesViewComponent
+            component: GerenteHabitacionesViewRouterComponent, // Index router
+            children: [
+              {
+                path: '',
+                component: GerenteHabitacionesViewComponent
+              },
+              {
+                path: 'create',
+                component: GerenteHabitacionesCreateViewComponent
+              }
+            ]
           },
           {
             path: 'recepcionistas',

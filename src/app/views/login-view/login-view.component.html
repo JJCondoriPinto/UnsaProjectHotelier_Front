@@ -21,7 +21,7 @@
             </div>
             <div class="card__body__form__group" [ngClass]="{'labelError' : errorPassword && formData.invalid}">
               <label for="password">Contraseña</label>
-              <input type="text" name="password" required formControlName="password">
+              <input type="password" name="password" required formControlName="password">
             </div>
             <div *ngIf="error && formData.invalid">
               <div class="card__error">

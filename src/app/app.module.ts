@@ -22,10 +22,12 @@ import { GerenteHabitacionesViewComponent } from './views/gerente/habitaciones/g
 import { GerenteRecepcionistasViewComponent } from './views/gerente/recepcionistas/gerente-recepcionistas-view/gerente-recepcionistas-view.component';
 import { GerenteReportesViewComponent } from './views/gerente/reportes/gerente-reportes-view/gerente-reportes-view.component';
 import { HeaderComponent } from './components/dashboard/header/header.component';
+import { ActionsHeaderTableComponent } from './components/dashboard/gerente/actions-header-table/actions-header-table.component';
+import { GerenteHabitacionesCreateViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-create-view/gerente-habitaciones-create-view.component';
+import { GerenteHabitacionesViewRouterComponent } from './views/gerente/habitaciones/gerente-habitaciones-view-router/gerente-habitaciones-view-router.component';
 
 @NgModule({
   declarations: [
-    
     AppComponent,
     LoginViewComponent,
     DashBoardViewComponent,
@@ -41,13 +43,16 @@ import { HeaderComponent } from './components/dashboard/header/header.component'
     GerenteRecepcionistasViewComponent,
     GerenteReportesViewComponent,
     HeaderComponent,
+    ActionsHeaderTableComponent,
+    GerenteHabitacionesCreateViewComponent,
+    GerenteHabitacionesViewRouterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [LoginService, StorageInfoService],
   bootstrap: [AppComponent]
