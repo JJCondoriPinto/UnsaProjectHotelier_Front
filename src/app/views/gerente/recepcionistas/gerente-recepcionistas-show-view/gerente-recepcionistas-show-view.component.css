@@ -1,0 +1,109 @@
+input, select {
+  outline: none;
+  width: 100%;
+  color: var(--app-bg-text);
+}
+h2 {
+  margin: 0;
+  padding: .5rem;
+}
+.wrapper {
+  min-height: 500px;
+}
+.view-form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--app-bg-form);
+  padding: 1rem;
+  box-shadow: 0 6px 10px 4px rgba(8, 16, 22, 0.3);
+  border-radius: 4px;
+  height: 100%;
+}
+@media screen and (min-width: 920px) {
+  .view-form {
+    flex-direction: row;
+  }
+  .form {
+    width: 50%;
+  }
+}
+.form {
+  text-align: center;
+  padding: .5rem 1rem;
+}
+.form__header {
+  padding: 0;
+  border-bottom: solid 1px var(--app-bg-text);
+  border-top: solid 1px var(--app-bg-text);
+  margin-bottom: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+.form__body {
+  display: flex;
+  row-gap: 0.6rem;
+  flex-direction: column;
+}
+.form__control {
+  width: 100%;
+  padding: .5rem;
+  background-color: var(--app-bg-input);
+  border: 2px solid var(--app-bg-input);
+  transition: .1s;
+}
+.form__control:hover {
+  background-color: var(--app-bg-input-hover);
+}
+.form__control:focus {
+  border-color: var(--app-bg-input-hover);
+  padding-inline: 14px;
+}
+.form__body__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: .6rem;
+  padding: 0 2rem;
+}
+.form__body__actions {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+.form__submit {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.form__submit__button {
+  margin: 0 3rem;
+  padding: .7rem;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+}
+.form__submit__button--create {
+  background-color: var(--app-button-dark);
+  color: var(--app-bg-text-primary);
+}
+.form__submit__button--create:hover {
+  background-color: var(--app-button-dark-hover);
+}
+.form__submit__button--cancel {
+  background-color: var(--app-button-red-hover);
+  color: var(--app-bg-text-primary);
+}
+.form__submit__button--cancel:hover {
+  background-color: var(--app-button-red);
+}
+.disabled {
+  background-color: var(--app-button-dark-hover);
+  cursor: auto;
+}
+.error {
+  color: var(--app-button-red-hover);
+  border-color: var(--app-button-red);
+}
+.error__label {
+  color: var(--app-button-red-hover);
+  font-size: 14px;
+}

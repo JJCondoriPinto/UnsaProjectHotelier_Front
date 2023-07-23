@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Recepcionista } from 'src/app/interfaces/Recepcionista';
 import { RecepcionistasService } from 'src/app/services/api/dashboard/gerente/recepcionistas.service';
 
 @Component({
@@ -8,10 +10,26 @@ import { RecepcionistasService } from 'src/app/services/api/dashboard/gerente/re
 })
 export class GerenteRecepcionistasViewComponent implements OnInit {
 
-  constructor (private service : RecepcionistasService) {}
+  recepcionistas : Recepcionista[] = []
+
+  constructor (private service : RecepcionistasService, private router : Router) {}
 
   ngOnInit(): void {
-      this.service.index();
+    this.service.index().subscribe((data : any) => {
+      this.recepcionistas = data
+    })
+  }
+
+  showRecepcionista(id : number) {
+    this.router.navigate([`${this.router.url}/${id.toString()}`])
+  }
+
+  deleteRecepcionista(id : number, event : Event) {
+    event.preventDefault()
+    event.stopPropagation()
+    this.service.delete(id).subscribe((data : any) => {
+      this.recepcionistas = this.recepcionistas.filter((recepcionista : Recepcionista) => recepcionista.id !== id);
+    })
   }
 
 }

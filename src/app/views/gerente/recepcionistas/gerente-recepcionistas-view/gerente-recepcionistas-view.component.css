@@ -1,0 +1,42 @@
+img, svg {
+  width: 100%;
+}
+td, th {
+  padding: 1rem .5rem;
+}
+.table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.table__row {
+  cursor: pointer;
+}
+.table__head {
+  background-color: var(--app-header-table);
+}
+.table__row--head {
+  padding: .5rem 0;
+  cursor: auto;
+}
+.table__row--data:hover {
+  background-color: var(--app-header-table);
+}
+
+.button {
+  padding: .5rem 1rem;
+  border: none;
+  transition: .15s;
+  cursor: pointer;
+}
+.button--danger {
+  background-color: var(--app-button-red);
+  color: white;
+}
+.button--danger:hover {
+  background-color: var(--app-button-red-hover);
+}
+.table__body__img {
+  max-width: 128px;
+  text-align: center;
+}

@@ -1,0 +1,90 @@
+<div class="wrapper">
+  <form class="view-form" [formGroup]="formData" (submit)="submit()">
+    <div class="form">
+      <div class="form__header">
+        <h2>Datos generales</h2>
+      </div>
+      <div class="form__body">
+        <div class="form__body__group">
+          <input type="text" step="1" class="form__control" name="nombres" placeholder="Nombres" formControlName="nombres"
+          (change)="clearError('nombres')"
+          [class]="{'error' : errors.nombres !== ''}">
+          <div [hidden]="errors.nombres === ''" class="error__label">
+            {{errors?.nombres}}
+          </div>
+        </div>
+        <div class="form__body__group">
+          <input type="text" step="1" class="form__control" name="apellidos" placeholder="Apellidos"
+          formControlName="apellidos"
+          [class]="{'error' : errors.apellidos !== ''}">
+          <div [hidden]="errors.apellidos === ''" class="error__label">
+            {{errors?.apellidos}}
+          </div>
+        </div>
+        <div class="form__body__group">
+          <input type="number" class="form__control" name="dni" placeholder="DNI de recepcionista" formControlName="dni"
+          (change)="clearError('dni')"
+          [class]="{'error' : errors.dni !== ''}">
+          <div [hidden]="errors.dni === ''" class="error__label">
+            {{errors?.dni}}
+          </div>
+        </div>
+        <div class="form__body__group">
+          <input type="number" min="900000000" class="form__control" name="telefono" placeholder="Telefono" formControlName="telefono"
+          (change)="clearError('telefono')"
+          [class]="{'error' : errors.telefono !== ''}">
+          <div [hidden]="errors.telefono === ''" class="error__label">
+            {{errors?.telefono}}
+          </div>
+        </div>
+        <div class="form__body__group">
+          <select type="text" step="0.01" class="form__control" name="turno" placeholder="Turno de recepcionista" formControlName="turno"
+          (change)="clearError('turno')"
+          [class]="{'error' : errors.turno !== ''}">
+            <option value="mañana" selected>Mañana</option>
+            <option value="tarde">Tarde</option>
+            <option value="noche">Noche</option>
+            <option value="finesSemana">Fines de semana</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form">
+      <div class="form__header">
+        <h2>Datos de usuario</h2>
+      </div>
+      <div class="form__body">
+        <div class="form__body__content">
+          <input type="email" name="email" placeholder="Email"
+            required
+            formControlName="email"
+            class="form__control"
+            (change)="clearError('email')"
+            [class]="{'error' : errors.email !== ''}">
+          <div [hidden]="errors.email === ''" class="error__label">
+            {{errors?.email}}
+          </div>
+          <input type="password" name="password" placeholder="Contraseña"
+            required
+            formControlName="password"
+            class="form__control"
+            (change)="clearError('password')"
+            [class]="{'error' : errors.password !== ''}">
+          <input type="password" name="confirmPassword" placeholder="Confirmar contraseña"
+            required
+            formControlName="confirmPassword"
+            class="form__control"
+            (change)="clearError('password')"
+            [class]="{'error' : errors.password !== ''}">
+          <div [hidden]="errors.password === ''" class="error__label">
+            {{errors?.password}}
+          </div>
+        </div>
+        <div class="form__submit">
+          <button type="submit" class="form__submit__button form__submit__button--create" [disabled]="formData.invalid" [class]="{'disabled' : formData.invalid}">Registrar recepcionista</button>
+          <button routerLink=".." (click)="$event.preventDefault()"  class="form__submit__button form__submit__button--cancel">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

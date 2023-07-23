@@ -26,6 +26,9 @@ import { ActionsHeaderTableComponent } from './components/dashboard/gerente/acti
 import { GerenteHabitacionesCreateViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-create-view/gerente-habitaciones-create-view.component';
 import { GerenteHabitacionesViewRouterComponent } from './views/gerente/habitaciones/gerente-habitaciones-view-router/gerente-habitaciones-view-router.component';
 import { GerenteHabitacionesShowViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-show-view/gerente-habitaciones-show-view.component';
+import { GerenteRecepcionistasViewRouterComponent } from './views/gerente/recepcionistas/gerente-recepcionistas-view-router/gerente-recepcionistas-view-router.component';
+import { GerenteRecepcionistasCreateViewComponent } from './views/gerente/recepcionistas/gerente-recepcionistas-create-view/gerente-recepcionistas-create-view.component';
+import { GerenteRecepcionistasShowViewComponent } from './views/gerente/recepcionistas/gerente-recepcionistas-show-view/gerente-recepcionistas-show-view.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { GerenteHabitacionesShowViewComponent } from './views/gerente/habitacion
     GerenteHabitacionesCreateViewComponent,
     GerenteHabitacionesViewRouterComponent,
     GerenteHabitacionesShowViewComponent,
+    GerenteRecepcionistasViewRouterComponent,
+    GerenteRecepcionistasCreateViewComponent,
+    GerenteRecepcionistasShowViewComponent,
   ],
   imports: [
     BrowserModule,

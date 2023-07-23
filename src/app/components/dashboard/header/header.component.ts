@@ -15,11 +15,13 @@ export class HeaderComponent implements OnInit {
   private lastRoute !: string
   private titles : any = {
     home : "Bienvenido(a)",
-    habitaciones : "Habitaciones",
     recepcionistas : "Recepcionistas",
-    reportes : "Reportes",
+    recepcionistascreate: "Registro de recepcionista",
+    recepcionistasshow: "Recepcionista ID ",
+    habitaciones : "Habitaciones",
     habitacionescreate: "Creación de habitacion",
     habitacionesshow: "Habitacion Nro ",
+    reportes : "Reportes",
   }
 
   constructor (private router : Router) {
