@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from '../../api.service';
+import { ApiService } from '../api.service';
 import { Habitacion } from 'src/app/interfaces/Habitacion';
 
 @Injectable({
@@ -29,7 +29,8 @@ export class HabitacionesService extends ApiService{
     return this.httpClient.post(`${this.apiUrl}`, habitacion, { headers: this.HEADER});
   }
 
-  setImage(id : number, data : any) : any {
+  setPartial(id : number, data : any) : any {
     return this.httpClient.patch(`${this.apiUrl}${id}`, data, { headers: this.HEADER})
   }
+
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Recepcionista } from 'src/app/interfaces/Recepcionista';
-import { RecepcionistasService } from 'src/app/services/api/dashboard/gerente/recepcionistas.service';
+import { RecepcionistasService } from 'src/app/services/api/dashboard/recepcionistas.service';
 
 @Component({
   selector: 'app-gerente-recepcionistas-view',

@@ -35,6 +35,8 @@ import { RecepcionistaHuespedesViewComponent } from './views/recepcionista/huesp
 import { RecepcionistaReservasViewComponent } from './views/recepcionista/reservas/recepcionista-reservas-view/recepcionista-reservas-view.component';
 import { RecepcionistaCheckinsViewComponent } from './views/recepcionista/checkins/recepcionista-checkins-view/recepcionista-checkins-view.component';
 import { RecepcionistaCheckoutsViewComponent } from './views/recepcionista/checkouts/recepcionista-checkouts-view/recepcionista-checkouts-view.component';
+import { RecepcionistaHabitacionesShowViewComponent } from './views/recepcionista/habitaciones/recepcionista-habitaciones-show-view/recepcionista-habitaciones-show-view.component';
+import { RecepcionistaHabitacionesViewRouterComponent } from './views/recepcionista/habitaciones/recepcionista-habitaciones-view-router/recepcionista-habitaciones-view-router.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { RecepcionistaCheckoutsViewComponent } from './views/recepcionista/check
     RecepcionistaReservasViewComponent,
     RecepcionistaCheckinsViewComponent,
     RecepcionistaCheckoutsViewComponent,
+    RecepcionistaHabitacionesShowViewComponent,
+    RecepcionistaHabitacionesViewRouterComponent,
   ],
   imports: [
     BrowserModule,

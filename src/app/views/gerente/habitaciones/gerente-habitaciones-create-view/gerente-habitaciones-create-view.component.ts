@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Contenido } from 'src/app/interfaces/Contenido';
 import { Habitacion } from 'src/app/interfaces/Habitacion';
-import { HabitacionesService } from 'src/app/services/api/dashboard/gerente/habitaciones.service';
+import { HabitacionesService } from 'src/app/services/api/dashboard/habitaciones.service';
 
 @Component({
   selector: 'app-gerente-habitaciones-create-view',
@@ -67,7 +67,7 @@ export class GerenteHabitacionesCreateViewComponent {
   setImage(id : number, file : File) {
     const data = new FormData();
     data.append('image', file, file.name);
-    this.service.setImage(id, data).subscribe({
+    this.service.setPartial(id, data).subscribe({
       next: ((res : any) => {
         this.router.navigate(['dashboard/gerente/habitaciones/']);
       }),

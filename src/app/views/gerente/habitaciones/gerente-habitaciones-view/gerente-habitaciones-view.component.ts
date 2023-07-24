@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Habitacion } from 'src/app/interfaces/Habitacion';
-import { HabitacionesService } from 'src/app/services/api/dashboard/gerente/habitaciones.service';
+import { HabitacionesService } from 'src/app/services/api/dashboard/habitaciones.service';
 
 @Component({
   selector: 'app-gerente-habitaciones-view',
