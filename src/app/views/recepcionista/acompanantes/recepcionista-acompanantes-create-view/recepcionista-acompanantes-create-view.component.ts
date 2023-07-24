@@ -47,19 +47,17 @@ export class RecepcionistaAcompanantesCreateViewComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.formData.pristine);
-
-    // this.service.create(this.idTitular, this.formData.value as Acompanante).subscribe({
-    //   next: ((res : any) => {
-    //     this.router.navigate([`dashboard/recepcionista/huespedes/${this.idTitular}`])
-    //   }),
-    //   error: ((err : any) => {
-    //     for(const key in this.errors) {
-    //       if (err.error.hasOwnProperty(key)) {
-    //         this.errors[key] = err.error[key]
-    //       }
-    //     }
-    //   })
-    // })
+    this.service.create(this.idTitular, this.formData.value as Acompanante).subscribe({
+      next: ((res : any) => {
+        this.router.navigate([`dashboard/recepcionista/huespedes/${this.idTitular}`])
+      }),
+      error: ((err : any) => {
+        for(const key in this.errors) {
+          if (err.error.hasOwnProperty(key)) {
+            this.errors[key] = err.error[key]
+          }
+        }
+      })
+    })
   }
 }
