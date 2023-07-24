@@ -1,0 +1,112 @@
+<div class="wrapper">
+  <form class="view-form" [formGroup]="formData" *ngIf="ready" (submit)="submit()">
+    <div class="form">
+      <div class="form__header">
+        <h2>Datos generales</h2>
+      </div>
+      <div class="form__body">
+        <div class="form__body__group">
+          <label for="tipo_identificacion" class="form__label">Tipo identificacion</label>
+          <select name="tipo_identificacion" formControlName="tipo_identificacion" required class="form__control">
+            <option value="Dni" selected>DNI</option>
+            <option value="Carnet_Extranjeria">CARNET_EXTRANJERIA</option>
+          </select>
+        </div>
+        <div class="form__body__group">
+          <label for="identificacion" class="form__label">Nro identificacion</label>
+          <input type="number" step="1" class="form__control" name="identificacion" placeholder="Identificacion"
+          formControlName="identificacion" required
+          (change)="clearError('identificacion')"
+          [class]="{'error' : errors.identificacion !== ''}">
+        </div>
+        <div [hidden]="errors.identificacion === ''" class="error__label">
+          {{errors?.identificacion}}
+        </div>
+        <div class="form__body__group">
+          <label for="nombres" class="form__label">Nombres</label>
+          <input type="text" class="form__control" name="nombres" placeholder="Nombres de huesped" formControlName="nombres" required
+          (change)="clearError('nombres')"
+          [class]="{'error' : errors.nombres !== ''}">
+        </div>
+        <div [hidden]="errors.nombres === ''" class="error__label">
+          {{errors?.nombres}}
+        </div>
+        <div class="form__body__group">
+          <label for="nombres" class="form__label">Apellidos</label>
+          <input type="text" class="form__control" name="apellidos" placeholder="Apellidos de huesped" formControlName="apellidos" required
+          (change)="clearError('apellidos')"
+          [class]="{'error' : errors.apellidos !== ''}">
+        </div>
+        <div [hidden]="errors.apellidos === ''" class="error__label">
+          {{errors?.apellidos}}
+        </div>
+        <div class="form__body__group">
+          <label for="nombres" class="form__label">Sexo</label>
+          <select name="sexo" formControlName="sexo" required class="form__control">
+            <option value="Masculino" selected>Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select>
+        </div>
+        <div class="form__body__group">
+          <label for="nombres" class="form__label">Fecha de nacimiento</label>
+          <input type="date" class="form__control" name="fecha_nacimiento" placeholder="Fecha de nacimiento" formControlName="fecha_nacimiento"
+          (change)="clearError('fecha_nacimiento')"
+          [class]="{'error' : errors.fecha_nacimiento !== ''}">
+        </div>
+        <div [hidden]="errors.fecha_nacimiento === ''" class="error__label">
+          {{errors?.fecha_nacimiento}}
+        </div>
+        <div class="form__body__group">
+          <label for="nombres" class="form__label">Nacionalidad</label>
+          <input type="text"class="form__control" name="nacionalidad" placeholder="Nacionalidad de huesped" formControlName="nacionalidad"
+          (change)="clearError('nacionalidad')"
+          [class]="{'error' : errors.nacionalidad !== ''}">
+        </div>
+        <div [hidden]="errors.nacionalidad === ''" class="error__label">
+          {{errors?.nacionalidad}}
+        </div>
+        <div class="form__body__group">
+          <label for="nombres" class="form__label">Region</label>
+          <input type="text" class="form__control" name="region" placeholder="Region de huesped" formControlName="region"
+          (change)="clearError('region')"
+          [class]="{'error' : errors.region !== ''}">
+        </div>
+        <div [hidden]="errors.region === ''" class="error__label">
+          {{errors?.region}}
+        </div>
+        <div class="form__body__group">
+          <label for="nombres" class="form__label">Telefono</label>
+          <input type="number" step="1" class="form__control" name="telefono" placeholder="Telefono" formControlName="telefono"
+          (change)="clearError('telefono')"
+          [class]="{'error' : errors.telefono !== ''}">
+        </div>
+        <div [hidden]="errors.telefono === ''" class="error__label">
+          {{errors?.telefono}}
+        </div>
+        <div class="form__body__group">
+          <label for="nombres" class="form__label">RUC empresa</label>
+          <input type="number" step="1" class="form__control" name="ruc_empresa" placeholder="RUC de empresa (opcional)" formControlName="ruc_empresa"
+          (change)="clearError('ruc_empresa')"
+          [class]="{'error' : errors.ruc_empresa !== ''}">
+        </div>
+        <div [hidden]="errors.ruc_empresa === ''" class="error__label">
+          {{errors?.ruc_empresa}}
+        </div>
+      </div>
+    </div>
+    <div class="form form--tableview">
+      <div class="form__header">
+        <h2>{{title_acompanantes}}</h2>
+      </div>
+      <div class="form__body">
+        <div class="form__body__content">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="form__submit">
+          <button type="submit" class="form__submit__button form__submit__button--create" [disabled]="formData.pristine && formData.invalid" [class]="{'disabled' : formData.pristine && formData.invalid}">Actualizar huesped</button>
+          <button routerLink=".." (click)="$event.preventDefault()" class="form__submit__button form__submit__button--cancel">Volver</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -22,7 +22,7 @@ import { GerenteHabitacionesViewComponent } from './views/gerente/habitaciones/g
 import { GerenteRecepcionistasViewComponent } from './views/gerente/recepcionistas/gerente-recepcionistas-view/gerente-recepcionistas-view.component';
 import { GerenteReportesViewComponent } from './views/gerente/reportes/gerente-reportes-view/gerente-reportes-view.component';
 import { HeaderComponent } from './components/dashboard/header/header.component';
-import { ActionsHeaderTableComponent } from './components/dashboard/gerente/actions-header-table/actions-header-table.component';
+import { ActionsHeaderTableComponent } from './components/dashboard/actions-header-table/actions-header-table.component';
 import { GerenteHabitacionesCreateViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-create-view/gerente-habitaciones-create-view.component';
 import { GerenteHabitacionesViewRouterComponent } from './views/gerente/habitaciones/gerente-habitaciones-view-router/gerente-habitaciones-view-router.component';
 import { GerenteHabitacionesShowViewComponent } from './views/gerente/habitaciones/gerente-habitaciones-show-view/gerente-habitaciones-show-view.component';
@@ -37,6 +37,13 @@ import { RecepcionistaCheckinsViewComponent } from './views/recepcionista/checki
 import { RecepcionistaCheckoutsViewComponent } from './views/recepcionista/checkouts/recepcionista-checkouts-view/recepcionista-checkouts-view.component';
 import { RecepcionistaHabitacionesShowViewComponent } from './views/recepcionista/habitaciones/recepcionista-habitaciones-show-view/recepcionista-habitaciones-show-view.component';
 import { RecepcionistaHabitacionesViewRouterComponent } from './views/recepcionista/habitaciones/recepcionista-habitaciones-view-router/recepcionista-habitaciones-view-router.component';
+import { DeleteIconComponent } from './components/icons/delete-icon/delete-icon.component';
+import { EditIconComponent } from './components/icons/edit-icon/edit-icon.component';
+import { RecepcionistaHuespedesViewRouterComponent } from './views/recepcionista/huespedes/recepcionista-huespedes-view-router/recepcionista-huespedes-view-router.component';
+import { RecepcionistaHuespedesShowViewComponent } from './views/recepcionista/huespedes/recepcionista-huespedes-show-view/recepcionista-huespedes-show-view.component';
+import { RecepcionistaAcompanantesViewComponent } from './views/recepcionista/acompanantes/recepcionista-acompanantes-view/recepcionista-acompanantes-view.component';
+import { RecepcionistaAcompanantesShowViewComponent } from './views/recepcionista/acompanantes/recepcionista-acompanantes-show-view/recepcionista-acompanantes-show-view.component';
+import { RecepcionistaAcompanantesCreateViewComponent } from './views/recepcionista/acompanantes/recepcionista-acompanantes-create-view/recepcionista-acompanantes-create-view.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +77,13 @@ import { RecepcionistaHabitacionesViewRouterComponent } from './views/recepcioni
     RecepcionistaCheckoutsViewComponent,
     RecepcionistaHabitacionesShowViewComponent,
     RecepcionistaHabitacionesViewRouterComponent,
+    DeleteIconComponent,
+    EditIconComponent,
+    RecepcionistaHuespedesViewRouterComponent,
+    RecepcionistaHuespedesShowViewComponent,
+    RecepcionistaAcompanantesViewComponent,
+    RecepcionistaAcompanantesShowViewComponent,
+    RecepcionistaAcompanantesCreateViewComponent,
   ],
   imports: [
     BrowserModule,

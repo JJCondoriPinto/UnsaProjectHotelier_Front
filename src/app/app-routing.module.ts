@@ -22,6 +22,11 @@ import { RecepcionistaCheckinsViewComponent } from './views/recepcionista/checki
 import { RecepcionistaCheckoutsViewComponent } from './views/recepcionista/checkouts/recepcionista-checkouts-view/recepcionista-checkouts-view.component';
 import { RecepcionistaHabitacionesViewRouterComponent } from './views/recepcionista/habitaciones/recepcionista-habitaciones-view-router/recepcionista-habitaciones-view-router.component';
 import { RecepcionistaHabitacionesShowViewComponent } from './views/recepcionista/habitaciones/recepcionista-habitaciones-show-view/recepcionista-habitaciones-show-view.component';
+import { RecepcionistaHuespedesViewRouterComponent } from './views/recepcionista/huespedes/recepcionista-huespedes-view-router/recepcionista-huespedes-view-router.component';
+import { RecepcionistaHuespedesShowViewComponent } from './views/recepcionista/huespedes/recepcionista-huespedes-show-view/recepcionista-huespedes-show-view.component';
+import { RecepcionistaAcompanantesViewComponent } from './views/recepcionista/acompanantes/recepcionista-acompanantes-view/recepcionista-acompanantes-view.component';
+import { RecepcionistaAcompanantesShowViewComponent } from './views/recepcionista/acompanantes/recepcionista-acompanantes-show-view/recepcionista-acompanantes-show-view.component';
+import { RecepcionistaAcompanantesCreateViewComponent } from './views/recepcionista/acompanantes/recepcionista-acompanantes-create-view/recepcionista-acompanantes-create-view.component';
 
 const routes: Routes = [
   {
@@ -121,7 +126,31 @@ const routes: Routes = [
           },
           {
             path: 'huespedes',
-            component: RecepcionistaHuespedesViewComponent
+            component: RecepcionistaHuespedesViewRouterComponent,
+            children: [
+              {
+                path: '',
+                component: RecepcionistaHuespedesViewComponent
+              },
+              {
+                path: ':id',
+                component: RecepcionistaHuespedesShowViewComponent,
+                children: [
+                  {
+                    path: '',
+                    component: RecepcionistaAcompanantesViewComponent
+                  },
+                  {
+                    path: 'acompanantes/:id',
+                    component: RecepcionistaAcompanantesShowViewComponent
+                  },
+                  {
+                    path: 'create',
+                    component: RecepcionistaAcompanantesCreateViewComponent
+                  }
+                ]
+              }
+            ]
           },
           {
             path: 'reservas',

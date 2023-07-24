@@ -23,8 +23,11 @@
   --app-button-red: rgba(184, 46, 46, 0.779);
   --app-button-red-hover: rgba(195, 23, 23, 0.858);
 
-  --app-button-blue: #2869ff97;
-  --app-button-blue-hover: #6290fdbe;
+  --app-button-danger: #dc3545;
+  --app-button-danger-hover: #aa4d56be;
+
+  --app-button-blue: #144ac9d4;
+  --app-button-blue-hover: #597cd0c8;
 
   --app-button-dark: #101010e0;
   --app-button-dark-hover: #292626d3;

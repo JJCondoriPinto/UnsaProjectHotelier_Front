@@ -1,0 +1,51 @@
+button {
+  cursor: pointer;
+}
+img, svg {
+  width: 100%;
+}
+td, th {
+  padding: 1rem .5rem;
+}
+.table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.table-view__label {
+  padding: 1rem;
+}
+.table__head {
+  background-color: var(--app-header-table);
+}
+.table__row--head {
+  padding: .5rem 0;
+  cursor: auto;
+}
+.table__row--data:hover {
+  background-color: var(--app-header-table);
+}
+.buttons {
+  display: flex;
+  column-gap: .2rem;
+}
+.button {
+  border: none;
+  transition: .15s;
+  padding: .25rem;
+  border-radius: 4px;
+}
+.button--delete {
+  background-color: var(--app-button-danger);
+  color: white;
+}
+.button--delete:hover {
+  background-color: var(--app-button-danger-hover);
+}
+.button--edit {
+  background-color: var(--app-button-blue);
+  color: white;
+}
+.button--edit:hover {
+  background-color: var(--app-button-blue-hover);
+}

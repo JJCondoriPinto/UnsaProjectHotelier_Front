@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
     habitacionesshow: "Habitacion Nro ",
 
     huespedes : "Huespedes registrados",
+    huespedesshow : "Huesped ID ",
 
     reservas : "Reservas actuales",
 
@@ -46,12 +47,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.param = "";
     this.routes = this.router.url.split('/').slice(1);
-    this.lastRoute = this.routes[this.routes.length-1];
+    this.lastRoute = this.routes.length > 3 ? this.routes[3] : this.routes[2];
     if(this.lastRoute == 'create') {
-      this.lastRoute = this.routes[this.routes.length-2] + this.lastRoute;
+      this.lastRoute = this.routes[2] + this.lastRoute;
     }else if(/^\d+$/.test(this.lastRoute.toString())) {
       this.param = this.lastRoute
-      this.lastRoute = this.routes[this.routes.length-2] + 'show';
+      this.lastRoute = this.routes[2] + 'show';
     }
     this.title = this.titles[this.lastRoute.toString()] + this.param;
   }
