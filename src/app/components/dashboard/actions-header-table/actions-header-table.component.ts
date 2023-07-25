@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class ActionsHeaderTableComponent {
   @Input() hasButtonCreate : boolean = false
   @Input() hasButtonsSwitch : boolean = true
+  @Input() titleButtonCreate : string = '+ Crear'
 }

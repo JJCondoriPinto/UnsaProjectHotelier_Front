@@ -51,7 +51,7 @@ button {
   column-gap: .2rem;
 }
 .actions__wrapper__group__create {
-  width: 110px;
+  min-width: 110px;
   background-color: var(--app-button-green);
   border-color: var(--app-button-green-hover);
   color: rgb(255, 255, 255);
