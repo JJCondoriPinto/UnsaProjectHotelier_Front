@@ -44,6 +44,17 @@ import { RecepcionistaHuespedesShowViewComponent } from './views/recepcionista/h
 import { RecepcionistaAcompanantesViewComponent } from './views/recepcionista/acompanantes/recepcionista-acompanantes-view/recepcionista-acompanantes-view.component';
 import { RecepcionistaAcompanantesShowViewComponent } from './views/recepcionista/acompanantes/recepcionista-acompanantes-show-view/recepcionista-acompanantes-show-view.component';
 import { RecepcionistaAcompanantesCreateViewComponent } from './views/recepcionista/acompanantes/recepcionista-acompanantes-create-view/recepcionista-acompanantes-create-view.component';
+import { CheckinIconComponent } from './components/icons/checkin-icon/checkin-icon.component';
+import { CheckoutIconComponent } from './components/icons/checkout-icon/checkout-icon.component';
+import { CheckIconComponent } from './components/icons/check-icon/check-icon.component';
+import { RecepcionistaReservasCreateViewComponent } from './views/recepcionista/reservas/recepcionista-reservas-create-view/recepcionista-reservas-create-view.component';
+import { RecepcionistaReservasShowViewComponent } from './views/recepcionista/reservas/recepcionista-reservas-show-view/recepcionista-reservas-show-view.component';
+import { RecepcionistaReservasViewRouterComponent } from './views/recepcionista/reservas/recepcionista-reservas-view-router/recepcionista-reservas-view-router.component';
+import { CancelIconComponent } from './components/icons/cancel-icon/cancel-icon.component';
+import { ReturnIconComponent } from './components/icons/return-icon/return-icon.component';
+import { RecepcionistaHuespedesCreateViewComponent } from './views/recepcionista/huespedes/recepcionista-huespedes-create-view/recepcionista-huespedes-create-view.component';
+import { ListHabitacionesComponent } from './components/dashboard/recepcionista/list-habitaciones/list-habitaciones.component';
+import { RecepcionistaReservasCreateFormComponent } from './views/recepcionista/reservas/recepcionista-reservas-create-form/recepcionista-reservas-create-form.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +95,17 @@ import { RecepcionistaAcompanantesCreateViewComponent } from './views/recepcioni
     RecepcionistaAcompanantesViewComponent,
     RecepcionistaAcompanantesShowViewComponent,
     RecepcionistaAcompanantesCreateViewComponent,
+    CheckinIconComponent,
+    CheckoutIconComponent,
+    CheckIconComponent,
+    RecepcionistaReservasCreateViewComponent,
+    RecepcionistaReservasShowViewComponent,
+    RecepcionistaReservasViewRouterComponent,
+    CancelIconComponent,
+    ReturnIconComponent,
+    RecepcionistaHuespedesCreateViewComponent,
+    ListHabitacionesComponent,
+    RecepcionistaReservasCreateFormComponent,
   ],
   imports: [
     BrowserModule,

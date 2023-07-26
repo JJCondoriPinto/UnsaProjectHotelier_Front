@@ -27,8 +27,51 @@ export class RecepcionistaReservasViewComponent implements OnInit {
 
   }
 
-  deleteReserva(id : number, event : Event) {
+  checkinReserva(id : number, event : Event) {
+    event.stopPropagation()
 
+  }
+
+  cancelReserva(id : number, event : Event) {
+    event.stopPropagation()
+    if (confirm('¿Desea cancelar la reserva?')) {
+      this.service.setPartial(id, {'estado': 'Cancelado'}).subscribe({
+        next: ((res : any) => {
+          const reserva = this.reservas.filter((reserva : Reserva) => reserva.id === id)
+          reserva[0].estado = 'Cancelado'
+        }),
+        error: ((err : any) => {
+          console.log(err);
+        })
+      })
+    }
+  }
+
+  returnReserva(id : number, event : Event) {
+    event.stopPropagation()
+    this.service.setPartial(id, {'estado': 'Pendiente'}).subscribe({
+      next: ((res : any) => {
+        const reserva = this.reservas.filter((reserva : Reserva) => reserva.id === id)
+        reserva[0].estado = 'Pendiente'
+      }),
+      error: ((err : any) => {
+        console.log(err);
+      })
+    })
+  }
+
+  deleteReserva(id : number, event : Event) {
+    event.stopPropagation()
+    if (confirm('¿Está seguro de eliminar esta reserva?')) {
+      this.service.delete(id).subscribe({
+        next: ((res : any) => {
+          this.reservas = this.reservas.filter((reserva : Reserva) => reserva.id !== id)
+        }),
+        error: ((err : any) => {
+          console.log(err);
+        })
+      })
+    }
   }
 
 }

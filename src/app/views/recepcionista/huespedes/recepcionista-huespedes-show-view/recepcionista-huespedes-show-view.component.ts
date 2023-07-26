@@ -11,7 +11,6 @@ import { HuespedesService } from 'src/app/services/api/dashboard/huespedes.servi
 })
 export class RecepcionistaHuespedesShowViewComponent {
 
-  contenido : Huesped[] = [];
   id !: number;
   title_acompanantes : string = 'Acompañantes'
   errors : any = {
@@ -40,17 +39,16 @@ export class RecepcionistaHuespedesShowViewComponent {
   ngOnInit(): void {
     this.service.show(this.id as number).subscribe({
       next: ((data : any) => {
-          this.contenido = data.contenido
           this.formData = new FormGroup({
             tipo_identificacion : new FormControl(data.tipo_identificacion, [Validators.required, Validators.min(0)]),
             identificacion : new FormControl(data.identificacion, [Validators.required, Validators.min(0)]),
             nombres : new FormControl(data.nombres, [Validators.required]),
-            apellidos : new FormControl(data.apellidos, [Validators.required, Validators.min(0)]),
-            sexo : new FormControl(data.sexo, [Validators.required, Validators.min(0)]),
-            fecha_nacimiento: new FormControl(data.fecha_nacimiento),
-            nacionalidad: new FormControl(data.nacionalidad),
-            region: new FormControl(data.region),
-            telefono: new FormControl(data.telefono),
+            apellidos : new FormControl(data.apellidos, [Validators.required]),
+            sexo : new FormControl(data.sexo, [Validators.required]),
+            fecha_nacimiento: new FormControl(data.fecha_nacimiento, [Validators.required]),
+            nacionalidad: new FormControl(data.nacionalidad, [Validators.required]),
+            region: new FormControl(data.region, [Validators.required]),
+            telefono: new FormControl(data.telefono, [Validators.required]),
             ruc_empresa: new FormControl(data.ruc_empresa)
           })
           this.ready = true;
@@ -68,20 +66,22 @@ export class RecepcionistaHuespedesShowViewComponent {
   }
 
   submit() {
-    this.service.update(this.id, this.formData.value as Huesped).subscribe({
-      next: ((res : any) => {
-        console.log(res);
+    if (this.formData.valid) {
+      this.service.update(this.id, this.formData.value as Huesped).subscribe({
+        next: ((res : any) => {
+          console.log(res);
+          this.ngOnInit();
+        }),
+        error: ((err : any) => {
+          console.log(err);
 
-      }),
-      error: ((err : any) => {
-        console.log(err);
-
-        for(const key in this.errors) {
-          if (err.error.hasOwnProperty(key)) {
-            this.errors[key] = err.error[key]
+          for(const key in this.errors) {
+            if (err.error.hasOwnProperty(key)) {
+              this.errors[key] = err.error[key]
+            }
           }
-        }
+        })
       })
-    })
+    }
   }
 }

@@ -28,6 +28,8 @@ export class HeaderComponent implements OnInit {
     huespedesshow : "Huesped ID ",
 
     reservas : "Reservas actuales",
+    reservasshow : "Reserva ID ",
+    reservascreate : "Generacion de reserva",
 
     checkins : "Check ins (entradas)",
 

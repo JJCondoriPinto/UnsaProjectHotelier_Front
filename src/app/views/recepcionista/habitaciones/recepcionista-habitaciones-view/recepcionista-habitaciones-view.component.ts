@@ -16,20 +16,11 @@ export class RecepcionistaHabitacionesViewComponent {
   constructor (private service : HabitacionesService, private router : Router) {}
 
   ngOnInit(): void {
-
     this.service.index().subscribe((data : Habitacion[]) => {
       this.urlImg = `${this.service.HOST_API}`
       this.habitaciones = data;
     })
 
-  }
-
-  deleteHabitacion(id : number, event : Event): void {
-    event.preventDefault()
-    event.stopPropagation()
-    this.service.delete(id).subscribe((data : any) => {
-      this.habitaciones = this.habitaciones.filter((habitacion : Habitacion) => habitacion.id !== id);
-    })
   }
 
   showHabitacion(id : number) : void {

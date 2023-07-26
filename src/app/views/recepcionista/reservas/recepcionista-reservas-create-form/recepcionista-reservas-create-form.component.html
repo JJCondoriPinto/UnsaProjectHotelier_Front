@@ -1,0 +1,47 @@
+  <form class="view-form" [formGroup]="formData">
+    <div class="form">
+      <div class="form__header">
+        <h2>Datos de Reserva</h2>
+      </div>
+      <div class="form__body">
+        <div class="form__body__container">
+          <div class="form__body__group">
+            <label for="fecha_llegada" class="form__label">Fecha de llegada</label>
+            <input type="date" name="fecha_llegada" class="form__control" formControlName="fecha_llegada" min="{{today}}" placeholder="Fecha de llegada" required min="today"
+            (change)="clearError('fecha_llegada')"
+            [class]="{'error' : errors.fecha_llegada !== ''}">
+          </div>
+          <div [hidden]="errors.fecha_llegada === ''" class="error__label">
+            {{errors?.fecha_llegada}}
+          </div>
+          <div class="form__body__group">
+            <label for="fecha_llegada" class="form__label">Cantidad de dias</label>
+            <input type="number" step="1" min="1" name="cantidad_dias" class="form__control" formControlName="cantidad_dias" placeholder="Dias de hospedaje" required
+            (change)="clearError('cantidad_dias')"
+            [class]="{'error' : errors.cantidad_dias !== ''}">
+          </div>
+          <div [hidden]="errors.cantidad_dias === ''" class="error__label">
+            {{errors?.cantidad_dias}}
+          </div>
+          <div class="form__body__group">
+            <label for="fecha_llegada" class="form__label">Razon de hospedaje</label>
+            <input type="text" name="razon_hospedaje" class="form__control" formControlName="razon_hospedaje" placeholder="Razon de hospedaje" required
+            (change)="clearError('razon_hospedaje')"
+            [class]="{'error' : errors.razon_hospedaje !== ''}">
+          </div>
+          <div [hidden]="errors.razon_hospedaje === ''" class="error__label">
+            {{errors?.razon_hospedaje}}
+          </div>
+        </div>
+        <div class="form__body__group form__body__group--area">
+          <textarea name="peticiones" rows="5" class="form__control" formControlName="peticiones" placeholder="Peticiones"
+          (change)="clearError('peticiones')"
+          [class]="{'error' : errors.peticiones !== ''}">
+        </textarea>
+        </div>
+        <div [hidden]="errors.peticiones === ''" class="error__label">
+          {{errors?.peticiones}}
+        </div>
+      </div>
+    </div>
+  </form>

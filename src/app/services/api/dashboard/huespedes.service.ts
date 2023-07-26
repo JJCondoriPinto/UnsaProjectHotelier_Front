@@ -18,6 +18,10 @@ export class HuespedesService extends ApiService {
     return this.httpClient.get<Huesped>(`${this.apiUrl}${id}`, { headers: this.HEADER })
   }
 
+  create(data : Huesped) : Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}`, data, { headers: this.HEADER })
+  }
+
   delete(id : number) : Observable<any> {
     return this.httpClient.delete(`${this.apiUrl}${id}`, { headers: this.HEADER })
   }

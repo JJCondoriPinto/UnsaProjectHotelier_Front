@@ -14,6 +14,10 @@ export class HabitacionesService extends ApiService{
     return this.httpClient.get<Habitacion[]>(this.apiUrl, { headers: this.HEADER });
   }
 
+  indexDisponible() : Observable<Habitacion[]> {
+    return this.httpClient.get<Habitacion[]>(this.apiUrl, { headers: this.HEADER, params: {'estado': 'Libre'} });
+  }
+
   show(id : number) : Observable<Habitacion> {
     return this.httpClient.get<Habitacion>(`${this.apiUrl}${id}`, { headers: this.HEADER });
   }

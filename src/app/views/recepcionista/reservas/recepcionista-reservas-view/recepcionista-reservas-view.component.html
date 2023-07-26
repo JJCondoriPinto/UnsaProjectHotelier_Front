@@ -15,17 +15,26 @@
         </tr>
       </thead>
       <tbody class="table__body">
-        <tr *ngFor="let reserva of reservas" class="table__row table__row--data"
-        (click)="showReserva(reserva.id)">
+        <tr *ngFor="let reserva of reservas" class="table__row table__row--data" [class]="{ 'disabled' : reserva.estado == 'Cancelado' }"
+        (click)="reserva.estado != 'Cancelado' ? showReserva(reserva.id) : null">
           <td>{{reserva.id}}</td>
           <td class="text-uppercase">{{reserva.titular_id}}</td>
           <td>{{reserva.habitacion_id}}</td>
           <td>{{reserva.estado}}</td>
           <td>{{reserva.fecha_llegada}}</td>
           <td>{{reserva.recepcionista_id}}</td>
-          <td>
-            <button class="button button--danger" (click)="deleteReserva(reserva.id, $event)">
-              Eliminar
+          <td class="buttons">
+            <button class="button button--next" (click)="checkinReserva(reserva.id, $event)" *ngIf="reserva.estado != 'Cancelado'">
+              <app-check-icon></app-check-icon>
+            </button>
+            <button class="button button--next" (click)="returnReserva(reserva.id, $event)" *ngIf="reserva.estado == 'Cancelado'">
+              <app-return-icon></app-return-icon>
+            </button>
+            <button class="button button--danger" (click)="cancelReserva(reserva.id, $event)" *ngIf="reserva.estado != 'Cancelado'">
+              <app-cancel-icon></app-cancel-icon>
+            </button>
+            <button class="button button--danger" (click)="deleteReserva(reserva.id, $event)" *ngIf="reserva.estado == 'Cancelado'">
+              <app-delete-icon></app-delete-icon>
             </button>
           </td>
         </tr>

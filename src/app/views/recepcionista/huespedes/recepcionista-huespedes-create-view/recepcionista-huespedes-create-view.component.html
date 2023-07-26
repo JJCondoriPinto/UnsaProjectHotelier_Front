@@ -1,8 +1,8 @@
 <div class="wrapper">
-  <form class="view-form" [formGroup]="formData" *ngIf="ready" (submit)="submit()">
+  <form class="view-form" [formGroup]="formData" (submit)="submit()">
     <div class="form">
       <div class="form__header">
-        <h2>Datos generales</h2>
+        <h2>Datos de huesped</h2>
       </div>
       <div class="form__body">
         <div class="form__body__group">
@@ -91,20 +91,6 @@
         </div>
         <div [hidden]="errors.ruc_empresa === ''" class="error__label">
           {{errors?.ruc_empresa}}
-        </div>
-      </div>
-    </div>
-    <div class="form form--tableview">
-      <div class="form__header">
-        <h2>{{title_acompanantes}}</h2>
-      </div>
-      <div class="form__body">
-        <div class="form__body__content">
-          <router-outlet></router-outlet>
-        </div>
-        <div class="form__submit">
-          <button type="submit" class="form__submit__button form__submit__button--create" [disabled]="formData.pristine || formData.invalid" [class]="{'disabled' : formData.pristine || formData.invalid}">Actualizar huesped</button>
-          <button routerLink=".." (click)="$event.preventDefault()" class="form__submit__button form__submit__button--cancel">Volver</button>
         </div>
       </div>
     </div>

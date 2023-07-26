@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="wrapper-grid">
+    <div class="form__group form__group--create">
+      <app-recepcionista-huespedes-create-view (huespedValid)="setHuesped($event)" [errors]="errorsHuesped">
+      </app-recepcionista-huespedes-create-view>
+    </div>
+    <div class="form__group form__group--tableview">
+      <app-list-habitaciones (idHabitacion)="setIdHabitacion($event)">
+        <div class="form__header" title>
+          <h2>Habitaciones disponibles</h2>
+        </div>
+      </app-list-habitaciones>
+    </div>
+  </div>
+  <div class="form__group from__group--reserva">
+    <app-recepcionista-reservas-create-form (reservaValid)="setReserva($event)" [errors]="errorsReserva">
+    </app-recepcionista-reservas-create-form>
+  </div>
+  <div class="form__submit">
+    <button (click)="submit()" class="form__submit__button form__submit__button--create"
+    [disabled]="!(reserva && huesped && idHabitacion)"
+    [class]="{'disabled' : !(reserva && huesped && idHabitacion)}">Generar reserva</button>
+    <button routerLink=".." (click)="$event.preventDefault()" class="form__submit__button form__submit__button--cancel">Volver</button>
+  </div>
+</div>

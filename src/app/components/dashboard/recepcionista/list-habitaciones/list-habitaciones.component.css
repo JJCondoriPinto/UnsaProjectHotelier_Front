@@ -7,33 +7,44 @@ th {
 td {
   padding: .5rem;
 }
+.container {
+  height: 560px;
+}
+.table-view {
+  max-height: 415px;
+  overflow-y: auto;
+}
 .table {
   width: 100%;
   text-align: left;
   border-collapse: collapse;
+  overflow-y: auto;
 }
 .table__row {
   cursor: pointer;
 }
 .table__head {
   background-color: var(--app-header-table);
+  opacity: 1;
+  position: sticky;
+  top: 0;
 }
 .table__row--head {
   padding: .5rem 0;
   cursor: auto;
 }
-.table__row--data:hover {
+.table__row--data:hover,
+.selected {
   background-color: var(--app-header-table);
 }
-.buttons {
-  display: flex;
-  column-gap: .2rem;
+.selected {
+  font-weight: bold;
 }
+
 .button {
+  padding: .5rem 1rem;
   border: none;
   transition: .15s;
-  padding: .25rem;
-  border-radius: 4px;
   cursor: pointer;
 }
 .button--danger {
@@ -43,16 +54,7 @@ td {
 .button--danger:hover {
   background-color: var(--app-button-red-hover);
 }
-.button--next {
-  background-color: var(--app-button-blue);
-  color: white;
-}
-.button--next:hover {
-  background-color: var(--app-button-blue-hover);
-}
-.disabled {
-  cursor: auto;
-}
-.disabled:hover {
-  background-color: initial;
+.table__body__img {
+  max-width: 128px;
+  text-align: center;
 }
