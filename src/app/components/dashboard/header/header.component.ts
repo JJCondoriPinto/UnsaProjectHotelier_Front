@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { StorageInfoService } from 'src/app/services/local/storage-info.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   private lastRoute !: string
   private titles : any = {
-    home : "Bienvenido(a)",
+    home : "Bienvenido(a) ",
 
     recepcionistas : "Recepcionistas",
     recepcionistascreate: "Registro de recepcionista",
@@ -38,7 +39,7 @@ export class HeaderComponent implements OnInit {
     reportes : "Reportes",
   }
 
-  constructor (private router : Router) {
+  constructor (private router : Router, private service : StorageInfoService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.ngOnInit();
@@ -55,6 +56,8 @@ export class HeaderComponent implements OnInit {
     }else if(/^\d+$/.test(this.lastRoute.toString())) {
       this.param = this.lastRoute
       this.lastRoute = this.routes[2] + 'show';
+    }else if(this.lastRoute == 'home') {
+      this.param = this.service.getNombres()
     }
     this.title = this.titles[this.lastRoute.toString()] + this.param;
   }

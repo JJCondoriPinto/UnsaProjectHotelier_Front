@@ -55,7 +55,6 @@ import { ReturnIconComponent } from './components/icons/return-icon/return-icon.
 import { RecepcionistaHuespedesCreateViewComponent } from './views/recepcionista/huespedes/recepcionista-huespedes-create-view/recepcionista-huespedes-create-view.component';
 import { ListHabitacionesComponent } from './components/dashboard/recepcionista/list-habitaciones/list-habitaciones.component';
 import { RecepcionistaReservasCreateFormComponent } from './views/recepcionista/reservas/recepcionista-reservas-create-form/recepcionista-reservas-create-form.component';
-import { RecepcionistaCheckinsViewRouterComponent } from './views/recepcionista/checkins/recepcionista-checkins-view-router/recepcionista-checkins-view-router.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +106,6 @@ import { RecepcionistaCheckinsViewRouterComponent } from './views/recepcionista/
     RecepcionistaHuespedesCreateViewComponent,
     ListHabitacionesComponent,
     RecepcionistaReservasCreateFormComponent,
-    RecepcionistaCheckinsViewRouterComponent,
   ],
   imports: [
     BrowserModule,
