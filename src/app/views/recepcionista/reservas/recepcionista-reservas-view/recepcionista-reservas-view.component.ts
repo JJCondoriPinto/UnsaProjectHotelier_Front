@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Reserva } from 'src/app/interfaces/Reserva';
+import { CheckinsService } from 'src/app/services/api/dashboard/checkins.service';
 import { ReservasService } from 'src/app/services/api/dashboard/reservas.service';
 
 @Component({
@@ -12,24 +13,28 @@ export class RecepcionistaReservasViewComponent implements OnInit {
 
   reservas : Reserva[] = []
 
-  constructor(private service : ReservasService, private router : Router) { }
+  constructor(private service : ReservasService, private serviceCheckin : CheckinsService, private router : Router) { }
 
   ngOnInit(): void {
     this.service.index().subscribe((data : Reserva[]) => {
-      data.map((reserva : Reserva) => {
-        reserva.fecha_llegada = new Date(reserva.fecha_llegada).toDateString()
-      })
       this.reservas = data
     })
   }
 
   showReserva(id : number) {
-
+    this.router.navigate([`${this.router.url}/${id}`])
   }
 
   checkinReserva(id : number, event : Event) {
     event.stopPropagation()
-
+    alert('Recuerde haber generado los paxx (acompañantes) en la seccion de huespedes')
+    this.serviceCheckin.create(id).subscribe((res : any) => {
+      this.reservas.forEach((reserva : Reserva) => {
+        if(reserva.id === id) {
+          reserva.estado = 'Registrado'
+        }
+      })
+    })
   }
 
   cancelReserva(id : number, event : Event) {
@@ -55,7 +60,7 @@ export class RecepcionistaReservasViewComponent implements OnInit {
         reserva[0].estado = 'Pendiente'
       }),
       error: ((err : any) => {
-        console.log(err);
+        alert(err.error)
       })
     })
   }

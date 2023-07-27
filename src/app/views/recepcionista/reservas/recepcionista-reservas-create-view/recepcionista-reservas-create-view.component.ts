@@ -58,6 +58,9 @@ export class RecepcionistaReservasCreateViewComponent {
   }
 
   createHuesped(huesped : Huesped) {
+    for(const key in this.errorsHuesped) {
+      this.errorsHuesped[key] = ''
+    }
     this.serviceHuesped.create(huesped).subscribe({
       next: (res : any) => {
         this.reserva.titular_id = res.id
@@ -75,6 +78,9 @@ export class RecepcionistaReservasCreateViewComponent {
   }
 
   createReserva() {
+    for(const key in this.errorsReserva) {
+      this.errorsReserva[key] = ''
+    }
     this.serviceReserva.create(this.reserva).subscribe({
       next: (res : any) => {
         console.log(res);

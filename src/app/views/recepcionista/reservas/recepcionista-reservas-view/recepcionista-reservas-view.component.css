@@ -27,6 +27,7 @@ td {
 }
 .buttons {
   display: flex;
+  justify-content: center;
   column-gap: .2rem;
 }
 .button {

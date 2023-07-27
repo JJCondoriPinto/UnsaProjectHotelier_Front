@@ -30,6 +30,7 @@ import { RecepcionistaAcompanantesCreateViewComponent } from './views/recepcioni
 import { RecepcionistaReservasViewRouterComponent } from './views/recepcionista/reservas/recepcionista-reservas-view-router/recepcionista-reservas-view-router.component';
 import { RecepcionistaReservasCreateViewComponent } from './views/recepcionista/reservas/recepcionista-reservas-create-view/recepcionista-reservas-create-view.component';
 import { RecepcionistaReservasShowViewComponent } from './views/recepcionista/reservas/recepcionista-reservas-show-view/recepcionista-reservas-show-view.component';
+import { RecepcionistaCheckinsViewRouterComponent } from './views/recepcionista/checkins/recepcionista-checkins-view-router/recepcionista-checkins-view-router.component';
 
 const routes: Routes = [
   {
@@ -175,7 +176,13 @@ const routes: Routes = [
           },
           {
             path: 'checkins',
-            component: RecepcionistaCheckinsViewComponent
+            component: RecepcionistaCheckinsViewRouterComponent,
+            children: [
+              {
+                path: '',
+                component: RecepcionistaCheckinsViewComponent
+              },
+            ]
           },
           {
             path: 'checkouts',

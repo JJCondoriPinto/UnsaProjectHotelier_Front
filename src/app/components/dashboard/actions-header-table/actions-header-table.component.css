@@ -5,6 +5,9 @@ button {
   border: none;
   transition: .15s;
 }
+p {
+  margin: 0;
+}
 .actions {
   width: 100%;
   padding: 1rem 0;

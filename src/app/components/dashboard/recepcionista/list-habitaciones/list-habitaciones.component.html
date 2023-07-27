@@ -1,7 +1,7 @@
 <div class="container">
   <ng-content selector="title" class="table-title">
   </ng-content>
-  <app-actions-header-table [hasButtonsSwitch]="false">
+  <app-actions-header-table [hasButtonsSwitch]="false" [title]="title">
   </app-actions-header-table>
   <div class="table-view">
     <table class="table">
@@ -17,7 +17,7 @@
       <tbody class="table__body">
         <tr *ngFor="let habitacion of habitaciones" class="table__row table__row--data"
         (click)="selectHabitacion(habitacion.id)"
-        [ngClass]="{'selected': habitacion.id === idSeleccionada}">
+        [class]="{'selected': habitacion.id === idSeleccionada}">
           <td>{{habitacion.id}}</td>
           <td>{{habitacion.nro_habitacion}}</td>
           <td>{{habitacion.nro_piso}}</td>

@@ -15,7 +15,7 @@ export class HabitacionesService extends ApiService{
   }
 
   indexDisponible() : Observable<Habitacion[]> {
-    return this.httpClient.get<Habitacion[]>(this.apiUrl, { headers: this.HEADER, params: {'estado': 'Libre'} });
+    return this.httpClient.get<Habitacion[]>(this.apiUrl, { headers: this.HEADER, params: {'estado': 'NoOperativo'} }); // Estado de exclusion
   }
 
   show(id : number) : Observable<Habitacion> {
