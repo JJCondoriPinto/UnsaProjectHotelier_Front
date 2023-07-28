@@ -10,6 +10,9 @@
   --app-bg-input: #dfdfdf90;
   --app-bg-input-hover: #cbcbcbb2;
 
+  --app-bg-select: #5f5e5e90;
+  --app-bg-select-hover: #39393988;
+
   --app-sidebar-background: #e9e8e8c9;
   --app-sidebar-header: #232222;
   --app-sidebar-route-hover: #d1cfcfc9;
@@ -48,6 +51,9 @@
 
   --app-bg-input: #3a3939c3;
   --app-bg-input-hover: #212121d7;
+
+  --app-bg-select: #1c1c1c;
+  --app-bg-select-hover: #2e2d2d;
 
   --app-sidebar-background: #0a0a0adc;
   --app-sidebar-header: #050404;

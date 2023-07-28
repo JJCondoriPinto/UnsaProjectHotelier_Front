@@ -2,6 +2,10 @@
   transition: border .15s ease-in-out;
   transition: background-color .15s ease-in-out;
 }
+svg {
+  width: 100%;
+  height: 100%;
+}
 .routes {
   height: 100%;
 }
@@ -19,6 +23,9 @@
 }
 .routes__route__text {
   font-size: 1.2rem;
+}
+.routes__route__icon {
+  width: 18px;
 }
 
 .active {

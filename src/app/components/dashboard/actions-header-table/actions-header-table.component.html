@@ -1,7 +1,12 @@
 <div class="actions">
     <div class="actions__wrapper">
 
-      <input class="actions__wrapper__search" placeholder="Search..." type="text">
+      <div class="search">
+        <select name="input_field" class="input__field" [(ngModel)]="input_field">
+          <option *ngFor="let field of headers" value="{{field}}">{{field}}</option>
+        </select>
+        <input class="actions__wrapper__search" placeholder="Search..." [(ngModel)]="input" type="text" id="inputSearch" (input)="search()">
+      </div>
 
       <div class="actions__wrapper__group">
         <p>{{title}}</p>
