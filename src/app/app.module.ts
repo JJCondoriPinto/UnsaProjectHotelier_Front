@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { ChartsModule } from 'ng2-charts';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginViewComponent } from './views/login-view/login-view.component';
@@ -113,6 +115,7 @@ import { RecepcionistaReservasCreateFormComponent } from './views/recepcionista/
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ChartsModule
   ],
   providers: [LoginService, StorageInfoService],
   bootstrap: [AppComponent]
