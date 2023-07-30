@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import { ReportesService } from 'src/app/services/api/dashboard/reportes.service';
 
 @Component({
   selector: 'app-ventas-semanales-chart',
@@ -9,9 +10,26 @@ import { Chart } from 'chart.js';
 export class VentasSemanalesChartComponent implements OnInit{
 
   chart !: Chart<any>;
+  data !: any
   labelColor !: string;
 
+  constructor(private service : ReportesService) { }
+
   ngOnInit(): void {
+    this.service.dataCount({'countSpecific': 'ventas'}).subscribe({
+      next: (data : any) => {
+        this.data = data
+        this.initChart()
+      },
+      error: (err : any ) => {
+        console.log(err);
+
+      }
+    })
+  }
+
+  initChart() : void {
+
     Chart.defaults.maintainAspectRatio = false;
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation : MutationRecord) => {
@@ -32,15 +50,20 @@ export class VentasSemanalesChartComponent implements OnInit{
     this.labelColor =
     getComputedStyle(document.documentElement).getPropertyValue('--app-bg-text')
 
+    const data = []
+    for(const index in this.data.ventas) {
+      data[this.data.ventas[index].dia] = this.data.ventas[index].ventas
+    }
+
     const ctx = document.getElementById('ventasChart') as HTMLCanvasElement;
     this.chart = new Chart(ctx, {
       type: 'line',
       data:{
-        labels: ["January", "February", "March", "April", 'May', 'June', 'August', 'September'],
+        labels: ["Lunes", "Martes", "Miercoles", "Jueves", 'Viernes', 'Sabado', 'Domingo'],
         datasets: [
           {
-            label: "Lost",
-            data: [45, 25, 40, 20, 60, 20, 35, 25],
+            label: "Ventas por semana actual",
+            data: data,
             borderWidth: 2.5,
             backgroundColor: '#dc3545',
             borderColor: '#dc3545',
@@ -62,7 +85,7 @@ export class VentasSemanalesChartComponent implements OnInit{
         y: {
           grid: {},
           ticks: {
-            stepSize: 15,
+            // stepSize: 200,
             color: this.labelColor,
           },
         },

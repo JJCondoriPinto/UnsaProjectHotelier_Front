@@ -58,9 +58,23 @@
         </div>
         <div class="form__body__group">
           <label for="nombres" class="form__label">Nacionalidad</label>
-          <input type="text"class="form__control" name="nacionalidad" placeholder="Nacionalidad de huesped" formControlName="nacionalidad"
+          <select class="form__control" name="nacionalidad" formControlName="nacionalidad"
           (change)="clearError('nacionalidad')"
           [class]="{'error' : errors.nacionalidad !== ''}">
+            <option value="Argentina">Argentina</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Peru">Peru</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Otro">Otro</option>
+          </select>
         </div>
         <div [hidden]="errors.nacionalidad === ''" class="error__label">
           {{errors?.nacionalidad}}

@@ -16,7 +16,6 @@ export class RecepcionistaReservasCreateViewComponent implements OnInit {
   huesped !: Huesped
   reserva !: Reserva
   idHabitacion !: number
-  onlyBooking : boolean = false
 
   errorsHuesped : any = {
     tipo_identificacion : '',
@@ -38,22 +37,9 @@ export class RecepcionistaReservasCreateViewComponent implements OnInit {
     peticiones: '' ,
   }
 
-  constructor(private serviceHuesped : HuespedesService, private serviceReserva : ReservasService, private route : ActivatedRoute) { }
+  constructor(private serviceHuesped : HuespedesService, private serviceReserva : ReservasService) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      const idTitular = params['idTitular'];
-      this.serviceHuesped.show(idTitular).subscribe({
-        next: (data : Huesped) => {
-          this.huesped = data
-          this.onlyBooking = true
-        },
-        error: (err : any) => {
-          console.log(err);
-
-        }
-      })
-    });
   }
 
   submit() {
@@ -78,7 +64,7 @@ export class RecepcionistaReservasCreateViewComponent implements OnInit {
     for(const key in this.errorsHuesped) {
       this.errorsHuesped[key] = ''
     }
-    const call = this.onlyBooking ?
+    const call = huesped.id ?
     this.serviceHuesped.update(huesped.id, huesped) :
     this.serviceHuesped.create(huesped)
 
@@ -104,8 +90,7 @@ export class RecepcionistaReservasCreateViewComponent implements OnInit {
     }
     this.serviceReserva.create(this.reserva).subscribe({
       next: (res : any) => {
-        console.log(res);
-
+        alert("Reserva generada, puede registrar los paxx en la seccion de Huesped")
       },
       error: (err : any) => {
         for(const key in this.errorsReserva) {

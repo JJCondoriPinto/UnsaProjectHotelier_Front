@@ -18,7 +18,6 @@ export class HuespedesNacionalidadChartComponent implements OnInit {
   ngOnInit(): void {
     this.service.dataCount({'countSpecific': 'huespedes'}).subscribe({
       next: (data : any) => {
-        console.log(data);
         this.data = data
         this.initChart()
       },
