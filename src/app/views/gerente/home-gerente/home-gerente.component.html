@@ -1,12 +1,38 @@
-<div class="contaniner">
-  <div style="display: block">
-    <canvas baseChart
-            [datasets]="barChartData"
-            [labels]="barChartLabels"
-            [options]="barChartOptions"
-            [legend]="barChartLegend"
-            [chartType]="barChartType">
-    </canvas>
+<div class="container">
+  <main class="main">
+    <section class="main__section">
+      <h2 class="main__section__title">Informacion de la aplicacion</h2>
+      <p class="main__section__text">
+        Esta aplicacion fue desarrolada para el manejo básico del proceso de recepcion en hoteles, contempla dos vistas, para gerentes y recepcionistas, la vista actual corresponde a la del gerente y posee algunas funcionalidades que son necesarias para complementar el trabajo del recepcionista.
+      </p>
+      <p class="main__section__text">
+        Un añadido de esta vista es la de poder generar y visualizar algunos reportes del negocio, además de poder añadir y eliminar recordatorios, según requiera.
+      </p>
+    </section>
+    <section class="main__section">
+      <h2 class="main__section__title">Funciones de gerente</h2>
+      <p class="main__section__text">
+        El gerente puede gestionar la informacion de las habitaciones (nro de habitacion, nro de piso, tipo de habitacion, precio por noche, tamaño, imagen y contenido), dicha gestion se basa en:
+      </p>
+      <ul>
+        <li>Listar habitaciones</li>
+        <li>Registrar habitaciones</li>
+        <li>Eliminar habitaciones</li>
+        <li>Editar informacion de habitaciones</li>
+      </ul>
+      <p class="main__section__text">
+        El gerente puede gestionar la informacion de los recepcionistas (nombres, apellidos, dni, turno, telefono y sus datos como usuario: email y contraseña), dicha gestion se basa en:
+      </p>
+      <ul>
+        <li>Listar recepcionistas</li>
+        <li>Registrar recepcionistas</li>
+        <li>Eliminar recepcionistas</li>
+        <li>Editar informacion de recepcionistas</li>
+      </ul>
+    </section>
+  </main>
+  <div class="aside">
+    <app-reminds></app-reminds>
   </div>
 </div>
 

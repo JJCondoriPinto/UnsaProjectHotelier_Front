@@ -1,0 +1,49 @@
+<div class="modal-overlay">
+  <form class="modal" [formGroup]="formData" (submit)="addRemind()">
+    <span class="close-btn" (click)="closeRemind($event)">&times;</span>
+    <h2 class="modal__title">Añadir recordatorio</h2>
+    <div class="modal__body">
+      <input type="text" placeholder="Titulo de recordatorio" class="modal__control" formControlName="titulo"
+      [class]="{'error': errors.titulo}">
+      <div class="error__label" *ngIf="errors.titulo">
+        {{errors.titulo}}
+      </div>
+      <input type="text" placeholder="Descripcion" class="modal__control" formControlName="descripcion" [class]="{'error': errors.descripcion}">
+      <div class="error__label" *ngIf="errors.descripcion">
+        {{errors.descripcion}}
+      </div>
+    </div>
+    <div class="modal__actions">
+      <button class="modal__actions__close modal__button" type="button" (click)="closeRemind($event)">
+        Cancelar
+      </button>
+      <button class="modal__actions__submit modal__button" type="submit">
+        Añadir
+      </button>
+    </div>
+  </form>
+</div>
+
+<aside class="aside">
+  <div class="aside__header">
+    <h2>Recordatorios</h2>
+  </div>
+  <div class="reminds">
+    <div class="reminds__create">
+      <button class="reminds__create__button" (click)="openRemind()">
+        + Add
+      </button>
+    </div>
+    <div class="card remind" *ngFor="let remind of reminds">
+      <div class="card__header">
+        <h4 class="card__header__title">{{remind.titulo}}</h4>
+        <button class="card__header__button" (click)="deleteRemind(remind.id)">
+          X
+        </button>
+      </div>
+      <div class="card__body">
+        {{remind.descripcion}}
+      </div>
+    </div>
+  </div>
+</aside>

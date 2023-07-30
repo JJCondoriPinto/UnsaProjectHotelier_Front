@@ -20,7 +20,9 @@ export class ActionsHeaderTableComponent implements OnInit{
     this.table = document.getElementsByClassName('table')[0]
     const rowHead = this.table.querySelector('.table__row--head')?.childNodes
     rowHead?.forEach((node : ChildNode) => {
-      this.headers.push(node.textContent ? node.textContent : "")
+      if (node.textContent != 'Imagen' && node.textContent != 'Accion') {
+        node.textContent ? this.headers.push(node.textContent) : null
+      }
     })
     this.input_field = this.headers[0]
   }

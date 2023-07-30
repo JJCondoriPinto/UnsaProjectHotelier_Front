@@ -1,1 +1,79 @@
-<p>gerente-reportes-view works!</p>
+<div class="wrapper">
+  <div class="cards">
+
+    <div class="card">
+      <div class="card__icon bg-green">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+          <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+        </svg>
+      </div>
+      <div class="card__content">
+        <div class="card__content__header">
+          <p class="card__content__header__info">{{fieldsCount.recepcionistas}}</p>
+          <span class="card__content__header__label">Recepcionistas</span>
+        </div>
+        <div class="card__content__body">
+          Recepcionistas registrados en el sistema
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__icon bg-blue">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="“round”" stroke-linejoin="round" class="feather feather-book">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+      </div>
+      <div class="card__content">
+        <div class="card__content__header">
+          <p class="card__content__header__info">{{fieldsCount.reservas}}</p>
+          <span class="card__content__header__label">Reservas</span>
+        </div>
+        <div class="card__content__body">
+          Reservas en curso
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__icon bg-red">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
+          <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+        </svg>
+      </div>
+      <div class="card__content">
+        <div class="card__content__header">
+          <p class="card__content__header__info">{{fieldsCount.habitaciones}}</p>
+          <span class="card__content__header__label">Habitaciones</span>
+        </div>
+        <div class="card__content__body">
+          Habitaciones registrados en el sistema
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="charts">
+    <div class="card chart">
+      <app-checkins-habitacion-chart class="ng-content">
+      </app-checkins-habitacion-chart>
+    </div>
+
+    <div class="card chart">
+      <app-huespedes-nacionalidad-chart class="ng-content">
+      </app-huespedes-nacionalidad-chart>
+    </div>
+
+    <div class="card chart">
+      <app-ventas-semanales-chart class="ng-content">
+      </app-ventas-semanales-chart>
+    </div>
+  </div>
+
+  <div class="reports">
+
+  </div>
+
+</div>

@@ -40,6 +40,9 @@
 
   --action-color: #272626c4;
   --action-color-hover: #3f3f3fd7;
+
+  --app-bg-card: #a4a1a19d;
+  --app-bg-card-hover: #8b838350;
 }
 .dark:root {
   --app-bg-content: #141111ef;
@@ -70,4 +73,7 @@
 
   --app-button-dark: #363636c4;
   --app-button-dark-hover: #1e1e1ed1;
+
+  --app-bg-card: #6060609d;
+  --app-bg-card-hover: #3938389d;
 }

@@ -1,0 +1,157 @@
+.aside {
+  background-color: var(--app-bg-form);
+  padding: 1rem;
+  box-shadow: 0 6px 10px 4px rgba(8, 16, 22, 0.3);
+  border-radius: 4px;
+  width: 100%;
+}
+.aside__header {
+  text-align: center;
+}
+.aside__header h2 {
+  margin: .5rem 1rem;
+}
+.reminds {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.reminds__create {
+  text-align: end;
+  margin-bottom: .6rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+.reminds__create__button {
+  padding: .2rem .8rem;
+  color: var(--app-bg-text-primary);
+  border: none;
+  transition: .2s ease;
+  cursor: pointer;
+  background-color: var(--app-button-green);
+}
+.reminds__create__button:hover {
+  background-color: var(--app-button-green-hover);
+}
+.card {
+  border-radius: 10px;
+  transition: .2s ease;
+  background-color: var(--app-bg-card);
+  color: var(--app-bg-text);
+}
+.card:hover {
+  background-color: var(--app-bg-card-hover);
+}
+.card__header {
+  padding: .4rem;
+  display: flex;
+  flex-direction: row;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--app-bg-card-hover);
+}
+.card__header__title {
+  margin: 0;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.card__header__button {
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  color: var(--app-bg-text);
+  font-size: 1.4rem;
+  background-color: unset;
+  outline: none;
+  text-align: end;
+}
+.card__body {
+  text-align: justify;
+  padding: .4rem .8rem;
+  padding-bottom: 1rem;
+}
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--app-sidebar-background);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 400px;
+  color: var(--app-bg-text);
+}
+.modal__body {
+  margin: .8rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: .6rem;
+}
+.modal__control {
+  width: 100%;
+  padding: .2rem 1rem;
+  outline: none;
+  border: none;
+  border-bottom: 4px solid var(--app-bg-card);
+  background-color: var(--app-sidebar-background);
+  color: var(--app-bg-text);
+  transition: .2s ease;
+}
+.modal__control:focus {
+  border-color: var(--app-bg-card-hover);
+}
+.modal__actions {
+  display: flex;
+  flex-flow: row-reverse;
+  column-gap: .4rem;
+}
+.modal__button {
+  padding: .4rem 1rem;
+  color: var(--app-bg-text-primary);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.modal__actions__close {
+  background-color: var(--app-button-dark);
+}
+.modal__actions__submit {
+  background-color: var(--app-button-blue);
+}
+.modal__actions__close:hover {
+  background-color: var(--app-button-dark-hover);
+}
+.modal__actions__submit:hover {
+  background-color: var(--app-button-blue-hover);
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.error {
+  color: var(--app-button-red-hover);
+  border-color: var(--app-button-red);
+}
+.error__label {
+  color: var(--app-button-red-hover);
+  font-size: 14px;
+}

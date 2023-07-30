@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Chart, ChartData, ChartOptions, ChartType } from 'chart.js';
 import { Remind } from 'src/app/interfaces/Remind';
 import { RemindsService } from 'src/app/services/api/dashboard/reminds.service';
 
 @Component({
-  selector: 'app-home-gerente',
-  templateUrl: './home-gerente.component.html',
-  styleUrls: ['./home-gerente.component.css']
+  selector: 'app-reminds',
+  templateUrl: './reminds.component.html',
+  styleUrls: ['./reminds.component.css']
 })
-export class HomeGerenteComponent implements OnInit{
-
+export class RemindsComponent {
   reminds : Remind[] = []
 
   modalOverlay !: HTMLElement
@@ -76,5 +74,4 @@ export class HomeGerenteComponent implements OnInit{
       }
     })
   }
-
 }

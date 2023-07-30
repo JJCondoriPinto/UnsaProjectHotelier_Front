@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { ChartsModule } from 'ng2-charts';
+import { NgChartsModule } from 'ng2-charts'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,6 +57,10 @@ import { ReturnIconComponent } from './components/icons/return-icon/return-icon.
 import { RecepcionistaHuespedesCreateViewComponent } from './views/recepcionista/huespedes/recepcionista-huespedes-create-view/recepcionista-huespedes-create-view.component';
 import { ListHabitacionesComponent } from './components/dashboard/recepcionista/list-habitaciones/list-habitaciones.component';
 import { RecepcionistaReservasCreateFormComponent } from './views/recepcionista/reservas/recepcionista-reservas-create-form/recepcionista-reservas-create-form.component';
+import { RemindsComponent } from './components/dashboard/reminds/reminds.component';
+import { CheckinsHabitacionChartComponent } from './components/dashboard/gerente/checkins-habitacion-chart/checkins-habitacion-chart.component';
+import { HuespedesNacionalidadChartComponent } from './components/dashboard/gerente/huespedes-nacionalidad-chart/huespedes-nacionalidad-chart.component';
+import { VentasSemanalesChartComponent } from './components/dashboard/gerente/ventas-semanales-chart/ventas-semanales-chart.component';
 
 @NgModule({
   declarations: [
@@ -108,6 +112,10 @@ import { RecepcionistaReservasCreateFormComponent } from './views/recepcionista/
     RecepcionistaHuespedesCreateViewComponent,
     ListHabitacionesComponent,
     RecepcionistaReservasCreateFormComponent,
+    RemindsComponent,
+    CheckinsHabitacionChartComponent,
+    HuespedesNacionalidadChartComponent,
+    VentasSemanalesChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,7 +123,7 @@ import { RecepcionistaReservasCreateFormComponent } from './views/recepcionista/
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ChartsModule
+    NgChartsModule
   ],
   providers: [LoginService, StorageInfoService],
   bootstrap: [AppComponent]
