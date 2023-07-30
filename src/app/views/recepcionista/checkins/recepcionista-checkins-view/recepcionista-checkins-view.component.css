@@ -9,9 +9,6 @@ td {
   text-align: left;
   border-collapse: collapse;
 }
-.table__row {
-  cursor: pointer;
-}
 .table__head {
   background-color: var(--app-header-table);
 }

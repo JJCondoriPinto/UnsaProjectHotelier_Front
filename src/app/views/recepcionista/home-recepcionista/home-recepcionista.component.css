@@ -1,0 +1,25 @@
+.container {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  column-gap: .6rem;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  row-gap: .6rem;
+}
+.main__section {
+  background-color: var(--app-bg-form);
+  padding: 1rem;
+  box-shadow: 0 6px 10px 4px rgba(8, 16, 22, 0.3);
+  border-radius: 4px;
+}
+.main__section__text {
+  text-align: justify;
+}
+.aside {
+  width: 25%;
+  height: auto;
+}

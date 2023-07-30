@@ -1,0 +1,68 @@
+<div class="container">
+  <main class="main">
+    <section class="main__section">
+      <h2 class="main__section__title">Informacion de la aplicacion</h2>
+      <p class="main__section__text">
+        Esta aplicacion fue desarrolada para el manejo básico del proceso de recepcion en hoteles, contempla dos vistas, para gerentes y recepcionistas, la vista actual corresponde a la del recepcionista y posee algunas funcionalidades básicas.
+      </p>
+      <p class="main__section__text">
+        Un añadido de esta vista es la de poder añadir y eliminar algunos recordatorios, según requiera.
+      </p>
+    </section>
+    <section class="main__section">
+      <h2 class="main__section__title">Funciones de recepcionista</h2>
+      <p class="main__section__text">
+        El recepcionista puede gestionar la información de las reservas a peticion de los huespedes, los checkins, checkouts y acceso limitado a la información de habitaciones.
+      </p>
+      <p class="main__section__text">
+        Para su buen desempeño, es importante considerar el proceso en el cual se basa el manejo de esta aplicación, dicho proceso posee los siguientes pasos:
+      </p>
+      <ol>
+        <li>Inicia el huesped acercandose a la recepción</li>
+        <li>El recepcionista toma los datos del huesped, la habitación que desea reservar, la fecha de llegada, cuántos días se quedará y algunas peticiones</li>
+        <li>El huesped será registrado en el sistema y antes de realizar su checkin se pueden registrar a sus acompañantes</li>
+        <li>El checkin se realiza cuando el huesped se encuentre en su habitación reservada</li>
+        <li>El checkout se realiza cuando el huesped se retire o haya culminado su estadía, pudiendo aplazarla en caso la habitación no cuente con otras reservas</li>
+      </ol>
+    </section>
+    <section class="main__section">
+      <h2 class="main__section__title">Mecanicas adicionales</h2>
+      <p class="main__section__text">
+        Como habrá podido ver, esta aplicación cuenta con un sidebar y varias pestañas, cada una de ellas le llevará a su ruta principal en sus respectivos campos, donde encontrará una tabla con los registros obtenidos hasta el momento, usted tendrá la facultar:
+      </p>
+      <ol>
+        <li class="text-bold">Gestionar informacion de huespedes</li>
+        <p class="main__section__text">
+          Podrá visualizar a todos los huespedes registrados en el sistema, este posee algunos campos y pueden ser editados haciendo click en cualquiera de las filas, cuando se editen los campos usted podrá actualizarlos y recibir algunos mensajes de error según la validación con la base de datos.
+        </p>
+        <li class="text-bold">Gestionar informacion de acompañantes</li>
+        <p class="main__section__text">
+          Podrá generar, editar y eliminar acompañantes a un huesped según requiera, es importante considerar que cuando el huesped haya realizado su checkin no se podrán generar más acompañantes, ya que es necesario definir su número (paxx) para el registro.
+        </p>
+        <li class="text-bold">Visualizar habitaciones</li>
+        <p class="main__section__text">
+          Como recepcionista, usted no posee la facultad de gestionar la información de habitaciones, pero si puede actualizar su estado según requiera, ya sea en Limpieza, No Operativo, Cancelado, etc.
+        </p>
+        <li class="text-bold">Gestionar reservas</li>
+        <p class="main__section__text">
+          Usted podrá generar reservas, donde se deberán llenar los datos para el titular (huesped), en caso no haya sido registrado anteriormente, por el contrario, en la pestaña de huespedes podrá seleccionar la acción de "generar reserva", en la tabla.
+        </p>
+        <p class="main__section__text">
+          Las reservas pueden ser canceladas antes de haber realizado el checkin, pero una vez se concrete dicha acción el estado de la reserva pasará a ser Registrado, luego cuando se realice el checkout este será Pasado, cabe decir que durante este proceso el estado de la habitación reservada sufrirá cambios, ya sea Reservado, Ocupado o Libre-
+        </p>
+        <li class="text-bold">Manejar checkins</li>
+        <p class="main__section__text">
+          Los checkins poseen información de cuándo el huesped ingresó a su estadía y su existencia indica que la habitación se encuentra ocupada, por lo cual, su creación no exige mucha información ya que la mayoría se genera de manera automática.
+        </p>
+        <li class="text-bold">Manejar checkouts</li>
+        <p class="main__section__text">
+          Al igual que los checkins, el checkout indica que el huesped se retiró o terminó su estadía, por lo cual, solo exige la reseña o descripción de su salida.
+        </p>
+      </ol>
+    </section>
+  </main>
+  <div class="aside">
+    <app-reminds></app-reminds>
+  </div>
+</div>
+

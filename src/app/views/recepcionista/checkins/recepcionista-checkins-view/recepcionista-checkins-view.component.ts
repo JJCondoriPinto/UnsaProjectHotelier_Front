@@ -23,10 +23,6 @@ export class RecepcionistaCheckinsViewComponent implements OnInit {
     })
   }
 
-  showCheckin(id : number) {
-
-  }
-
   deleteCheckin(id : number, event : Event) {
     event.stopPropagation()
     this.service.delete(id).subscribe({
