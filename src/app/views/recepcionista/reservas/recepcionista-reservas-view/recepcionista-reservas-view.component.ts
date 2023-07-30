@@ -28,12 +28,17 @@ export class RecepcionistaReservasViewComponent implements OnInit {
   checkinReserva(id : number, event : Event) {
     event.stopPropagation()
     alert('Recuerde haber generado los paxx (acompañantes) en la seccion de huespedes')
-    this.serviceCheckin.create(id).subscribe((res : any) => {
-      this.reservas.forEach((reserva : Reserva) => {
-        if(reserva.id === id) {
-          reserva.estado = 'Registrado'
-        }
-      })
+    this.serviceCheckin.create(id).subscribe({
+      next: (res : any) => {
+        this.reservas.forEach((reserva : Reserva) => {
+          if(reserva.id === id) {
+            reserva.estado = 'Registrado'
+          }
+        })
+      },
+      error: (err : any) => {
+        alert(err.error)
+      }
     })
   }
 
@@ -46,7 +51,7 @@ export class RecepcionistaReservasViewComponent implements OnInit {
           reserva[0].estado = 'Cancelado'
         }),
         error: ((err : any) => {
-          console.log(err);
+          alert(err.error)
         })
       })
     }
@@ -73,7 +78,7 @@ export class RecepcionistaReservasViewComponent implements OnInit {
           this.reservas = this.reservas.filter((reserva : Reserva) => reserva.id !== id)
         }),
         error: ((err : any) => {
-          console.log(err);
+          alert(err.error)
         })
       })
     }

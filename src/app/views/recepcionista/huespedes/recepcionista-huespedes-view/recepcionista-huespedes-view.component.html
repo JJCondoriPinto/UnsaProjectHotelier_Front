@@ -27,9 +27,12 @@
           <td>{{huesped.sexo}}</td>
           <td>{{huesped.nacionalidad}}</td>
           <td>{{huesped.telefono}}</td>
-          <td>
+          <td class="buttons">
+            <button class="button button--next" (click)="reservaHuesped(huesped.id, $event)">
+              <app-check-icon></app-check-icon>
+            </button>
             <button class="button button--danger" (click)="deleteHuesped(huesped.id, $event)">
-              Eliminar
+              <app-delete-icon></app-delete-icon>
             </button>
           </td>
         </tr>

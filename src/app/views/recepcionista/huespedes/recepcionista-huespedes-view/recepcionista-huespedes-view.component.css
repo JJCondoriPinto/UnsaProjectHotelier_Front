@@ -22,11 +22,16 @@ td, th {
 .table__row--data:hover {
   background-color: var(--app-header-table);
 }
-
+.buttons {
+  display: flex;
+  justify-content: center;
+  column-gap: .2rem;
+}
 .button {
-  padding: .5rem 1rem;
   border: none;
   transition: .15s;
+  padding: .25rem;
+  border-radius: 4px;
   cursor: pointer;
 }
 .button--danger {
@@ -35,4 +40,11 @@ td, th {
 }
 .button--danger:hover {
   background-color: var(--app-button-red-hover);
+}
+.button--next {
+  background-color: var(--app-button-blue);
+  color: white;
+}
+.button--next:hover {
+  background-color: var(--app-button-blue-hover);
 }

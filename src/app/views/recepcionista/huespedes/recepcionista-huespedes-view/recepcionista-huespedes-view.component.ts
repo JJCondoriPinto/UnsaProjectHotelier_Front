@@ -34,4 +34,10 @@ export class RecepcionistaHuespedesViewComponent implements OnInit {
     })
   }
 
+  reservaHuesped(id : number, event : Event) {
+    event.preventDefault()
+    event.stopPropagation()
+    this.router.navigate(['dashboard/recepcionista/reservas/create'], { queryParams: { idTitular:id } });
+  }
+
 }

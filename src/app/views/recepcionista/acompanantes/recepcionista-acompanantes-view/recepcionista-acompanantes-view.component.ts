@@ -11,6 +11,7 @@ import { AcompanantesService } from 'src/app/services/api/dashboard/acompanantes
 export class RecepcionistaAcompanantesViewComponent implements OnInit {
 
   acompanantes : Acompanante[] = []
+  estadoTitular : boolean = false // Si esta o no hospedado
   idTitular !: number;
 
   constructor(private service : AcompanantesService, private router : Router) { }
@@ -19,7 +20,8 @@ export class RecepcionistaAcompanantesViewComponent implements OnInit {
     const routes = this.router.url.split('/');
     this.idTitular = Number(routes[routes.length-1])
     this.service.index(this.idTitular).subscribe((data : any) => {
-      this.acompanantes = data
+      this.acompanantes = data.acompanantes
+      this.estadoTitular = data.estadoTitular
     })
   }
 
