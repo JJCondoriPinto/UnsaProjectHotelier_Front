@@ -11,19 +11,19 @@ export class CheckinsService extends ApiService {
   private apiUrl : string = `${this.HOST_API}${this.API_BACK}checkins/`
 
   index() : Observable<Checkin[]> {
-    return this.httpClient.get<Checkin[]>(this.apiUrl, { headers: this.HEADER })
+    return this.httpClient.get<Checkin[]>(this.apiUrl, { headers: this.getHeaders() })
   }
 
   show(id : number) : Observable<Checkin> {
-    return this.httpClient.get<Checkin>(`${this.apiUrl}${id}`, { headers: this.HEADER })
+    return this.httpClient.get<Checkin>(`${this.apiUrl}${id}`, { headers: this.getHeaders() })
   }
 
   create(idReserva : number) : Observable<any> {
-    return this.httpClient.post(this.apiUrl, idReserva, { headers: this.HEADER })
+    return this.httpClient.post(this.apiUrl, idReserva, { headers: this.getHeaders() })
   }
 
   delete(id : number) : Observable<any> {
-    return this.httpClient.delete(`${this.apiUrl}${id}`, { headers: this.HEADER })
+    return this.httpClient.delete(`${this.apiUrl}${id}`, { headers: this.getHeaders() })
   }
 
 }

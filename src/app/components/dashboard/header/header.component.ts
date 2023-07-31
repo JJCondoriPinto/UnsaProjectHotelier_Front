@@ -51,15 +51,17 @@ export class HeaderComponent implements OnInit {
     this.param = "";
     this.routes = this.router.url.split('/').slice(1);
     this.lastRoute = this.routes.length > 3 ? this.routes[3] : this.routes[2];
-    if(this.lastRoute.includes('create')) {
-      this.lastRoute = this.routes[2] + 'create';
-    }else if(/^\d+$/.test(this.lastRoute.toString())) {
-      this.param = this.lastRoute
-      this.lastRoute = this.routes[2] + 'show';
-    }else if(this.lastRoute == 'home') {
-      this.param = this.service.getNombres()
+    if (this.lastRoute) {
+      if(this.lastRoute.includes('create')) {
+        this.lastRoute = this.routes[2] + 'create';
+      }else if(/^\d+$/.test(this.lastRoute.toString())) {
+        this.param = this.lastRoute
+        this.lastRoute = this.routes[2] + 'show';
+      }else if(this.lastRoute == 'home') {
+        this.param = this.service.getNombres()
+      }
+      this.title = this.titles[this.lastRoute.toString()] + this.param;
     }
-    this.title = this.titles[this.lastRoute.toString()] + this.param;
   }
 
   changeTheme() {

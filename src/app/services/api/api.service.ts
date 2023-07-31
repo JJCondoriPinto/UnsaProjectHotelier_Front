@@ -13,8 +13,10 @@ export abstract class ApiService { // Servicio global para apis
 
   protected HEADER: HttpHeaders = new HttpHeaders();
 
-  constructor(protected httpClient : HttpClient, private storage : StorageInfoService) {
-    this.HEADER = this.HEADER.append('Authorization', `Token ${this.storage.getKeyToken()}`);
+  constructor(protected httpClient : HttpClient, private storage : StorageInfoService) { }
+
+  getHeaders() : HttpHeaders {
+    return this.HEADER.append('Authorization', `Token ${this.storage.getKeyToken()}`);
   }
 
 }

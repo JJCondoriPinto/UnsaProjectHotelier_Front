@@ -30,6 +30,8 @@ import { RecepcionistaAcompanantesCreateViewComponent } from './views/recepcioni
 import { RecepcionistaReservasViewRouterComponent } from './views/recepcionista/reservas/recepcionista-reservas-view-router/recepcionista-reservas-view-router.component';
 import { RecepcionistaReservasCreateViewComponent } from './views/recepcionista/reservas/recepcionista-reservas-create-view/recepcionista-reservas-create-view.component';
 import { RecepcionistaReservasShowViewComponent } from './views/recepcionista/reservas/recepcionista-reservas-show-view/recepcionista-reservas-show-view.component';
+import { authGuard } from './guards/auth.guard';
+import { roleGuard } from './guards/role.guard';
 
 const routes: Routes = [
   {
@@ -44,10 +46,15 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashBoardViewComponent,
+    canActivateChild: [authGuard],
     children: [
       {
         path: 'gerente',
         component: IndexGerenteComponent,
+        data: {
+          role: 'gerente'
+        },
+        canActivate: [roleGuard],
         children: [
           {
             path: '',
@@ -103,6 +110,10 @@ const routes: Routes = [
       {
         path: 'recepcionista',
         component: IndexRecepcionistaComponent,
+        data: {
+          role: 'recepcionista'
+        },
+        canActivate: [roleGuard],
         children: [
           {
             path: '',

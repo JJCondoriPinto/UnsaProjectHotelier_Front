@@ -17,6 +17,10 @@ export class StorageInfoService {
     localStorage.setItem('turno', this.encrypt(data.turno));
   }
 
+  public setNull() : void {
+    localStorage.clear();
+  }
+
   public getNombres() : any {
     return this.decrypt(localStorage.getItem('nombres')+"");
   }
