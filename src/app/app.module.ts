@@ -61,6 +61,7 @@ import { RemindsComponent } from './components/dashboard/reminds/reminds.compone
 import { CheckinsHabitacionChartComponent } from './components/dashboard/gerente/checkins-habitacion-chart/checkins-habitacion-chart.component';
 import { HuespedesNacionalidadChartComponent } from './components/dashboard/gerente/huespedes-nacionalidad-chart/huespedes-nacionalidad-chart.component';
 import { VentasSemanalesChartComponent } from './components/dashboard/gerente/ventas-semanales-chart/ventas-semanales-chart.component';
+import { NotFoundComponent } from './views/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -116,6 +117,7 @@ import { VentasSemanalesChartComponent } from './components/dashboard/gerente/ve
     CheckinsHabitacionChartComponent,
     HuespedesNacionalidadChartComponent,
     VentasSemanalesChartComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

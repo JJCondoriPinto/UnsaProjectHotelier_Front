@@ -1,0 +1,20 @@
+p {
+  margin: 0;
+  font-size: 2rem;
+}
+h1 {
+  font-size: 3rem;
+}
+.container {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #e8e8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15rem;
+}
+.content  {
+  text-align: center;
+  margin-bottom: 16rem;
+}

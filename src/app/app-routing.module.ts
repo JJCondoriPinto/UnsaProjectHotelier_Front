@@ -32,6 +32,9 @@ import { RecepcionistaReservasCreateViewComponent } from './views/recepcionista/
 import { RecepcionistaReservasShowViewComponent } from './views/recepcionista/reservas/recepcionista-reservas-show-view/recepcionista-reservas-show-view.component';
 import { authGuard } from './guards/auth.guard';
 import { roleGuard } from './guards/role.guard';
+import { StorageInfoService } from './services/local/storage-info.service';
+import { loginGuard } from './guards/login.guard';
+import { NotFoundComponent } from './views/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -41,13 +44,19 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginViewComponent
+    component: LoginViewComponent,
+    canActivate: [loginGuard]
   },
   {
     path: 'dashboard',
     component: DashBoardViewComponent,
-    canActivateChild: [authGuard],
+    canActivate: [authGuard],
     children: [
+      {
+        path: '',
+        redirectTo: `${new StorageInfoService().getRol()}`,
+        pathMatch: 'prefix'
+      },
       {
         path: 'gerente',
         component: IndexGerenteComponent,
@@ -195,6 +204,10 @@ const routes: Routes = [
         ]
       }
     ]
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
