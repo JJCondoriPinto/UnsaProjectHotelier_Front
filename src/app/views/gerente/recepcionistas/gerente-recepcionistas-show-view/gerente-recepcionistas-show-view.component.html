@@ -71,12 +71,12 @@
             formControlName="password"
             class="form__control"
             (change)="clearError('password')"
-            [class]="{'error' : errors.password !== ''}">
+            [class]="{'error' : errors.password !== ''}"  autocomplete="new-password">
           <input type="password" name="confirmPassword" placeholder="Confirmar contraseña"
             formControlName="confirmPassword"
             class="form__control"
             (change)="clearError('password')"
-            [class]="{'error' : errors.password !== ''}">
+            [class]="{'error' : errors.password !== ''}"  autocomplete="new-password">
           <div [hidden]="errors.password === ''" class="error__label">
             {{errors?.password}}
           </div>

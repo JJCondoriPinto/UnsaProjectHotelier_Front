@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ChildActivationEnd, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginViewComponent } from './views/login-view/login-view.component';
 import { DashBoardViewComponent } from './views/dash-board-view/dash-board-view.component';
 import { IndexGerenteComponent } from './views/gerente/index-gerente/index-gerente.component';

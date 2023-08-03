@@ -7,7 +7,7 @@ import { StorageInfoService } from '../local/storage-info.service';
 })
 export abstract class ApiService { // Servicio global para apis
 
-   HOST_API: string = 'http://127.0.0.1:8000'
+   HOST_API: string = 'http://api.localhost'
    API_AUTH: string = '/api-token-auth/'
    API_BACK: string = '/api/v1/'
 

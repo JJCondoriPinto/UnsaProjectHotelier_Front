@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { StorageInfoService } from '../../local/storage-info.service';
 import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
 
