@@ -7,7 +7,7 @@ import { StorageInfoService } from '../local/storage-info.service';
 })
 export abstract class ApiService { // Servicio global para apis
 
-   HOST_API: string = 'http://api.localhost'
+   HOST_API: string = 'https://api.fastbooking.bjrcode.com'
    API_AUTH: string = '/api-token-auth/'
    API_BACK: string = '/api/v1/'
 
