@@ -1,15 +1,16 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { StorageInfoService } from '../local/storage-info.service';
+import { environment } from 'src/app/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export abstract class ApiService { // Servicio global para apis
 
-   HOST_API: string = 'https://api.fastbooking.bjrcode.com'
-   API_AUTH: string = '/api-token-auth/'
-   API_BACK: string = '/api/v1/'
+   HOST_API: string = environment.API_HOST;
+   API_AUTH: string = environment.API_TOKEN;
+   API_BACK: string = environment.API_PREFIX;
 
   protected HEADER: HttpHeaders = new HttpHeaders();
 
