@@ -17,7 +17,7 @@
           <form class="card__body__form" (submit)="login()" [formGroup]="formData">
             <div class="card__body__form__group" [ngClass]="{'labelError' : errorEmail && formData.invalid}">
               <label for="email">Email</label>
-              <input type="email" name="email" required formControlName="email">
+              <input type="email" name="email" required formControlName="email" autocapitalize="none" autocomplete="email">
             </div>
             <div class="card__body__form__group" [ngClass]="{'labelError' : errorPassword && formData.invalid}">
               <label for="password">Contraseña</label>

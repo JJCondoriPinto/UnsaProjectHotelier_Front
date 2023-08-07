@@ -63,7 +63,7 @@
             formControlName="email"
             class="form__control"
             (change)="clearError('email')"
-            [class]="{'error' : errors.email !== ''}">
+            [class]="{'error' : errors.email !== ''}" autocomplete="email">
           <div [hidden]="errors.email === ''" class="error__label">
             {{errors?.email}}
           </div>
